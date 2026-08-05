@@ -10,6 +10,8 @@ import CertDetail from './pages/CertDetail';
 import Pricing from './pages/Pricing';
 import Dashboard from './pages/Dashboard';
 import About from './pages/About';
+import Success from './pages/Success';
+import Cancel from './pages/Cancel';
 import './App.css';
 
 function ScrollToTop() {
@@ -32,6 +34,8 @@ function AppContent() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
       </Routes>
       <Footer />
     </>

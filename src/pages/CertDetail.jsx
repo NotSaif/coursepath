@@ -173,6 +173,9 @@ export default function CertDetail() {
         onClose={() => setPaymentOpen(false)}
         plan={cert.name[language]}
         price={t('pricing.course.price')}
+        priceType="course"
+        certId={cert.id}
+        certName={cert.name.en}
       />
     </main>
   );

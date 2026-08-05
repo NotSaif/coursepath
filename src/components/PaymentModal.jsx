@@ -1,51 +1,49 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { X, Check, Lock, CreditCard } from 'lucide-react';
+import { X, CreditCard, Loader2, AlertCircle, Apple } from 'lucide-react';
 import './PaymentModal.css';
 
-export default function PaymentModal({ isOpen, onClose, plan, price }) {
+export default function PaymentModal({ isOpen, onClose, plan, price, priceType, certId, certName }) {
   const { t } = useTranslation();
-  const [status, setStatus] = useState('idle'); // idle | processing | success | error
-  const [cardNumber, setCardNumber] = useState('');
-  const [expiry, setExpiry] = useState('');
-  const [cvc, setCvc] = useState('');
+  const [status, setStatus] = useState('idle'); // idle | loading | error
+  const [errorMsg, setErrorMsg] = useState('');
 
   if (!isOpen) return null;
 
-  const handleApplePay = async () => {
-    setStatus('processing');
-    // Simulated Apple Pay flow - in production, this would use Stripe Payment Request API
-    setTimeout(() => {
-      setStatus('success');
-    }, 2000);
-  };
+  const handleCheckout = async () => {
+    setStatus('loading');
+    setErrorMsg('');
 
-  const handleCardPay = async (e) => {
-    e.preventDefault();
-    setStatus('processing');
-    // Simulated card payment - in production, this would use Stripe Elements
-    setTimeout(() => {
-      setStatus('success');
-    }, 2000);
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          priceType: priceType || 'pro_monthly',
+          certId: certId || '',
+          certName: certName || plan || '',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create checkout session');
+      }
+
+      // Redirect to Stripe Checkout
+      window.location.href = data.url;
+    } catch (err) {
+      console.error('Checkout error:', err);
+      setStatus('error');
+      setErrorMsg(err.message);
+    }
   };
 
   const handleClose = () => {
     setStatus('idle');
-    setCardNumber('');
-    setExpiry('');
-    setCvc('');
+    setErrorMsg('');
     onClose();
-  };
-
-  const formatCardNumber = (value) => {
-    const v = value.replace(/\D/g, '').slice(0, 16);
-    return v.replace(/(\d{4})(?=\d)/g, '$1 ');
-  };
-
-  const formatExpiry = (value) => {
-    const v = value.replace(/\D/g, '').slice(0, 4);
-    if (v.length >= 2) return v.slice(0, 2) + '/' + v.slice(2);
-    return v;
   };
 
   return (
@@ -55,116 +53,79 @@ export default function PaymentModal({ isOpen, onClose, plan, price }) {
           <X size={18} />
         </button>
 
-        {status === 'success' ? (
-          <div className="payment-success">
-            <div className="success-icon">
-              <Check size={32} />
+        <div className="payment-modal-body">
+          <h2>{t('payment.title')}</h2>
+
+          {/* Order Summary */}
+          <div className="payment-summary">
+            <div className="payment-summary-row">
+              <span>{plan}</span>
+              <span>{price}</span>
             </div>
-            <h3>{t('payment.success')}</h3>
-            <p>{t('payment.successDesc')}</p>
-            <button className="btn btn-primary btn-lg" onClick={handleClose}>
-              {t('payment.close')}
-            </button>
+            <div className="payment-summary-row total">
+              <span>Total</span>
+              <span>{price}</span>
+            </div>
           </div>
-        ) : (
-          <div className="payment-modal-body">
-            <h2>{t('payment.title')}</h2>
 
-            <div className="payment-summary">
-              <div className="payment-summary-row">
-                <span>{plan}</span>
-                <span>{price}</span>
+          {/* Payment Info */}
+          <div className="checkout-info">
+            <div className="checkout-methods">
+              <div className="checkout-method-item">
+                <Apple size={20} />
+                <span>Apple Pay</span>
               </div>
-              <div className="payment-summary-row total">
-                <span>Total</span>
-                <span>{price}</span>
+              <div className="checkout-method-item">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+                </svg>
+                <span>Google Pay</span>
+              </div>
+              <div className="checkout-method-item">
+                <CreditCard size={20} />
+                <span>Credit / Debit Card</span>
               </div>
             </div>
+            <p className="checkout-info-text">
+              You'll be redirected to our secure payment partner Stripe. Apple Pay and Google Pay are available automatically on supported devices.
+            </p>
+          </div>
 
-            {/* Apple Pay Button */}
-            <button
-              className="apple-pay-btn"
-              onClick={handleApplePay}
-              disabled={status === 'processing'}
-              id="apple-pay-btn"
-            >
-              {status === 'processing' ? (
+          {/* Error Message */}
+          {status === 'error' && (
+            <div className="checkout-error">
+              <AlertCircle size={16} />
+              <span>{errorMsg}</span>
+            </div>
+          )}
+
+          {/* Checkout Button */}
+          <button
+            className="pay-btn"
+            onClick={handleCheckout}
+            disabled={status === 'loading'}
+            id="proceed-checkout-btn"
+          >
+            {status === 'loading' ? (
+              <>
                 <div className="spinner" />
-              ) : (
-                <>
-                  <svg viewBox="0 0 24 24" fill="currentColor" height="20">
-                    <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                  </svg>
-                  {t('pricing.applePay')}
-                </>
-              )}
-            </button>
+                {t('payment.processing')}
+              </>
+            ) : (
+              <>
+                <CreditCard size={18} />
+                Proceed to Secure Checkout
+              </>
+            )}
+          </button>
 
-            <div className="payment-divider">
-              <span>{t('payment.orPayWith')}</span>
-            </div>
-
-            {/* Card Form */}
-            <form className="card-form" onSubmit={handleCardPay}>
-              <div>
-                <label>{t('payment.cardNumber')}</label>
-                <input
-                  type="text"
-                  className="input-field"
-                  placeholder="4242 4242 4242 4242"
-                  value={cardNumber}
-                  onChange={e => setCardNumber(formatCardNumber(e.target.value))}
-                  id="card-number-input"
-                />
-              </div>
-              <div className="input-row">
-                <div>
-                  <label>{t('payment.expiry')}</label>
-                  <input
-                    type="text"
-                    className="input-field"
-                    placeholder="MM/YY"
-                    value={expiry}
-                    onChange={e => setExpiry(formatExpiry(e.target.value))}
-                    id="expiry-input"
-                  />
-                </div>
-                <div>
-                  <label>{t('payment.cvc')}</label>
-                  <input
-                    type="text"
-                    className="input-field"
-                    placeholder="123"
-                    maxLength={4}
-                    value={cvc}
-                    onChange={e => setCvc(e.target.value.replace(/\D/g, ''))}
-                    id="cvc-input"
-                  />
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="pay-btn"
-                disabled={status === 'processing'}
-                id="pay-card-btn"
-              >
-                {status === 'processing' ? (
-                  <div className="spinner" />
-                ) : (
-                  <>
-                    <CreditCard size={18} />
-                    {t('payment.pay')} {price}
-                  </>
-                )}
-              </button>
-            </form>
-
-            <div className="payment-secure">
-              <Lock size={12} />
-              <span>{t('payment.secure')}</span>
-            </div>
+          <div className="payment-secure">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" style={{ color: 'var(--color-success)' }}>
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+            </svg>
+            <span>{t('payment.secure')}</span>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

@@ -11,8 +11,8 @@ export default function Pricing() {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [openFaq, setOpenFaq] = useState(null);
 
-  const openPayment = (plan, price) => {
-    setSelectedPlan({ plan, price });
+  const openPayment = (plan, price, priceType) => {
+    setSelectedPlan({ plan, price, priceType });
     setPaymentOpen(true);
   };
 
@@ -79,7 +79,7 @@ export default function Pricing() {
             </div>
             <button
               className="btn btn-secondary btn-lg"
-              onClick={() => openPayment(t('pricing.course.name'), t('pricing.course.price'))}
+              onClick={() => openPayment(t('pricing.course.name'), t('pricing.course.price'), 'course')}
               id="course-plan-btn"
             >
               {t('pricing.course.cta')}
@@ -112,7 +112,8 @@ export default function Pricing() {
               className="btn btn-primary btn-lg"
               onClick={() => openPayment(
                 t('pricing.pro.name'),
-                yearly ? t('pricing.pro.priceYearly') + t('pricing.perYear') : t('pricing.pro.price') + t('pricing.perMonth')
+                yearly ? t('pricing.pro.priceYearly') + t('pricing.perYear') : t('pricing.pro.price') + t('pricing.perMonth'),
+                yearly ? 'pro_yearly' : 'pro_monthly'
               )}
               id="pro-plan-btn"
             >
@@ -155,6 +156,7 @@ export default function Pricing() {
         onClose={() => setPaymentOpen(false)}
         plan={selectedPlan?.plan}
         price={selectedPlan?.price}
+        priceType={selectedPlan?.priceType}
       />
     </main>
   );

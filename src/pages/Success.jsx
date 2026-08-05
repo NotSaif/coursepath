@@ -1,23 +1,34 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { CheckCircle, ArrowRight, LayoutDashboard } from 'lucide-react';
+import { usePurchase } from '../context/PurchaseContext';
+import { CheckCircle, ArrowRight, LayoutDashboard, Sparkles } from 'lucide-react';
 import './Result.css';
 
 export default function Success() {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
-  const [session, setSession] = useState(null);
-  const sessionId = searchParams.get('session_id');
+  const { unlockPro, unlockCourse } = usePurchase();
+  const [unlockedTarget, setUnlockedTarget] = useState(null);
 
   useEffect(() => {
-    if (sessionId) {
-      fetch(`/api/checkout-session/${sessionId}`)
-        .then(res => res.json())
-        .then(data => setSession(data))
-        .catch(err => console.error('Failed to fetch session:', err));
+    // When returning from payment redirect:
+    // If cert_id query param exists, unlock that specific course
+    const certId = searchParams.get('cert_id');
+    const priceType = searchParams.get('price_type');
+
+    if (priceType === 'pro_monthly' || priceType === 'pro_yearly' || !certId) {
+      unlockPro();
+      setUnlockedTarget('pro');
+    } else if (certId) {
+      unlockCourse(certId);
+      setUnlockedTarget(certId);
+    } else {
+      // Default: Grant Pro access upon returning to /success
+      unlockPro();
+      setUnlockedTarget('pro');
     }
-  }, [sessionId]);
+  }, [searchParams, unlockCourse, unlockPro]);
 
   return (
     <main className="result-page" id="success-page">
@@ -28,39 +39,33 @@ export default function Success() {
         <h1>{t('payment.success')}</h1>
         <p>{t('payment.successDesc')}</p>
 
-        {session && (
-          <div className="result-details">
-            {session.customerEmail && (
-              <div className="result-details-row">
-                <span className="label">Email</span>
-                <span className="value">{session.customerEmail}</span>
-              </div>
-            )}
-            {session.amountTotal && (
-              <div className="result-details-row">
-                <span className="label">Amount</span>
-                <span className="value">
-                  ${(session.amountTotal / 100).toFixed(2)} {session.currency?.toUpperCase()}
-                </span>
-              </div>
-            )}
-            <div className="result-details-row">
-              <span className="label">Status</span>
-              <span className="value" style={{ color: 'var(--color-success)' }}>
-                ✓ {session.status === 'paid' ? 'Paid' : 'Confirmed'}
-              </span>
-            </div>
+        <div className="result-details" style={{ textAlign: 'center', padding: 'var(--space-lg)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: 'var(--accent-primary)', fontWeight: 'bold', fontSize: 'var(--text-lg)' }}>
+            <Sparkles size={20} />
+            <span>
+              {unlockedTarget === 'pro' ? 'Pro Subscription Activated!' : 'Course Materials Unlocked!'}
+            </span>
           </div>
-        )}
+          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: '8px' }}>
+            All chapters, video courses, PDFs, and practice questions are now fully unlocked for your account.
+          </p>
+        </div>
 
         <div className="result-actions">
-          <Link to="/dashboard" className="btn btn-primary btn-lg" id="go-to-dashboard">
+          {unlockedTarget && unlockedTarget !== 'pro' ? (
+            <Link to={`/cert/${unlockedTarget}`} className="btn btn-primary btn-lg" id="go-to-unlocked-course">
+              Start Unlocked Course
+              <ArrowRight size={18} />
+            </Link>
+          ) : (
+            <Link to="/catalog" className="btn btn-primary btn-lg" id="go-to-catalog-unlocked">
+              Explore All Courses
+              <ArrowRight size={18} />
+            </Link>
+          )}
+          <Link to="/dashboard" className="btn btn-secondary btn-lg" id="go-to-dashboard">
             <LayoutDashboard size={18} />
             {t('nav.dashboard')}
-          </Link>
-          <Link to="/catalog" className="btn btn-secondary btn-lg">
-            {t('nav.catalog')}
-            <ArrowRight size={18} />
           </Link>
         </div>
       </div>

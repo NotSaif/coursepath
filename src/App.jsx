@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { ProgressProvider } from './context/ProgressContext';
+import { PurchaseProvider } from './context/PurchaseContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -47,7 +48,9 @@ export default function App() {
     <Router>
       <LanguageProvider>
         <ProgressProvider>
-          <AppContent />
+          <PurchaseProvider>
+            <AppContent />
+          </PurchaseProvider>
         </ProgressProvider>
       </LanguageProvider>
     </Router>

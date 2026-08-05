@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { GraduationCap } from 'lucide-react';
+import { usePurchase } from '../context/PurchaseContext';
+import { GraduationCap, Sparkles } from 'lucide-react';
 import LanguageToggle from './LanguageToggle';
 import './Navbar.css';
 
 export default function Navbar() {
   const { t } = useTranslation();
   const location = useLocation();
+  const { isPro, unlockedCourses } = usePurchase();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -43,6 +45,16 @@ export default function Navbar() {
               <GraduationCap size={20} />
             </div>
             <span>{t('brand')}</span>
+            {isPro && (
+              <span className="badge badge-accent" style={{ fontSize: '10px', padding: '2px 8px', display: 'inline-flex', alignItems: 'center', gap: '3px' }}>
+                <Sparkles size={10} /> PRO
+              </span>
+            )}
+            {!isPro && unlockedCourses.length > 0 && (
+              <span className="badge badge-accent" style={{ fontSize: '10px', padding: '2px 8px' }}>
+                {unlockedCourses.length} Course{unlockedCourses.length > 1 ? 's' : ''} Unlocked
+              </span>
+            )}
           </Link>
 
           <div className="navbar-links">

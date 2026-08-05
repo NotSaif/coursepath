@@ -3,28 +3,31 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../context/LanguageContext';
 import { useProgress } from '../context/ProgressContext';
+import { usePurchase } from '../context/PurchaseContext';
 import { certifications } from '../data/certifications';
 import ChapterItem from '../components/ChapterItem';
 import ProgressBar from '../components/ProgressBar';
 import PaymentModal from '../components/PaymentModal';
 import {
   ArrowLeft, ArrowRight, Clock, BarChart3, DollarSign, Building2,
-  ExternalLink, Lock, Lightbulb, Sparkles
+  ExternalLink, Lock, Lightbulb, Sparkles, CheckCircle2
 } from 'lucide-react';
 import './CertDetail.css';
 
-const FREE_CHAPTERS = 2; // First 2 chapters are free
+const FREE_CHAPTERS = 2; // First 2 chapters are free for non-purchased
 
 export default function CertDetail() {
   const { certId } = useParams();
   const { t } = useTranslation();
   const { language, isRTL } = useLanguage();
   const { getCertProgress } = useProgress();
+  const { isCertUnlocked } = usePurchase();
   const [paymentOpen, setPaymentOpen] = useState(false);
 
   const cert = certifications.find(c => c.id === certId);
   if (!cert) return <Navigate to="/catalog" replace />;
 
+  const isUnlocked = isCertUnlocked(cert.id);
   const progress = getCertProgress(cert.id);
   const BackArrow = isRTL ? ArrowRight : ArrowLeft;
 
@@ -106,16 +109,24 @@ export default function CertDetail() {
 
         {/* Roadmap */}
         <div className="roadmap-section" id="study-roadmap">
-          <h2>
-            <Sparkles size={22} style={{ color: 'var(--accent-primary)' }} />
-            {t('certDetail.roadmap')}
-          </h2>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-sm)' }}>
+            <h2>
+              <Sparkles size={22} style={{ color: 'var(--accent-primary)' }} />
+              {t('certDetail.roadmap')}
+            </h2>
+            {isUnlocked && (
+              <span className="badge badge-accent" style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 12px', fontSize: 'var(--text-xs)' }}>
+                <CheckCircle2 size={14} /> Full Access Unlocked
+              </span>
+            )}
+          </div>
           <div className="chapters-list">
             {cert.chapters.map((chapter, index) => {
               const isFree = index < FREE_CHAPTERS;
+              const chapterLocked = !isUnlocked && !isFree;
               return (
                 <div key={chapter.id}>
-                  {isFree && index === 0 && (
+                  {!isUnlocked && isFree && index === 0 && (
                     <div style={{ marginBottom: 'var(--space-sm)' }}>
                       <span className="badge badge-accent">{t('certDetail.freePreview')}</span>
                     </div>
@@ -124,31 +135,33 @@ export default function CertDetail() {
                     chapter={chapter}
                     certId={cert.id}
                     index={index}
-                    isLocked={!isFree}
+                    isLocked={chapterLocked}
                   />
                 </div>
               );
             })}
           </div>
 
-          {/* Unlock Banner */}
-          <div className="unlock-banner" id="unlock-banner">
-            <Lock size={32} style={{ color: 'var(--accent-primary)', marginBottom: 'var(--space-sm)' }} />
-            <h3>{t('certDetail.locked')}</h3>
-            <p>{t('certDetail.lockedDesc')}</p>
-            <div style={{ display: 'flex', gap: 'var(--space-md)', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <button
-                className="btn btn-primary btn-lg"
-                onClick={() => setPaymentOpen(true)}
-                id="unlock-course-btn"
-              >
-                {t('pricing.course.cta')} — {t('pricing.course.price')}
-              </button>
-              <Link to="/pricing" className="btn btn-secondary btn-lg">
-                {t('pricing.pro.cta')}
-              </Link>
+          {/* Unlock Banner - Only show if course is not unlocked */}
+          {!isUnlocked && (
+            <div className="unlock-banner" id="unlock-banner">
+              <Lock size={32} style={{ color: 'var(--accent-primary)', marginBottom: 'var(--space-sm)' }} />
+              <h3>{t('certDetail.locked')}</h3>
+              <p>{t('certDetail.lockedDesc')}</p>
+              <div style={{ display: 'flex', gap: 'var(--space-md)', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <button
+                  className="btn btn-primary btn-lg"
+                  onClick={() => setPaymentOpen(true)}
+                  id="unlock-course-btn"
+                >
+                  {t('pricing.course.cta')} — {t('pricing.course.price')}
+                </button>
+                <Link to="/pricing" className="btn btn-secondary btn-lg">
+                  {t('pricing.pro.cta')}
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Exam Tips */}

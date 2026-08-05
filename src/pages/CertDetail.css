@@ -1,0 +1,212 @@
+.cert-detail-page {
+  padding-top: calc(var(--nav-height) + var(--space-2xl));
+  min-height: 100vh;
+}
+
+.cert-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  transition: color var(--transition-fast);
+}
+
+.cert-detail-back:hover {
+  color: var(--accent-primary);
+}
+
+.cert-detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: var(--border-subtle);
+}
+
+.cert-detail-info {
+  flex: 1;
+}
+
+.cert-detail-badge-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.cert-detail-info h1 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-sm);
+}
+
+.cert-detail-org {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.cert-detail-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-lg);
+  max-width: 700px;
+}
+
+.cert-detail-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.cert-meta-item {
+  background: var(--bg-card);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.cert-meta-item .meta-label {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.cert-meta-item .meta-value {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+}
+
+.cert-detail-progress {
+  margin-bottom: var(--space-xl);
+}
+
+.cert-detail-progress-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.cert-exam-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Roadmap Section */
+.roadmap-section {
+  margin-top: var(--space-2xl);
+}
+
+.roadmap-section h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-lg);
+}
+
+.chapters-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Unlock Banner */
+.unlock-banner {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+.unlock-banner h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-sm);
+}
+
+.unlock-banner p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.unlock-banner .btn {
+  margin-inline: auto;
+}
+
+/* Exam Tips */
+.exam-tips-section {
+  margin-top: var(--space-2xl);
+  background: var(--bg-secondary);
+  border: var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+}
+
+.exam-tips-section h2 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.exam-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.exam-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.exam-tip svg {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .cert-detail-header {
+    flex-direction: column;
+  }
+
+  .cert-detail-info h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .cert-detail-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-exam-actions {
+    flex-direction: column;
+  }
+
+  .cert-exam-actions .btn {
+    width: 100%;
+  }
+}

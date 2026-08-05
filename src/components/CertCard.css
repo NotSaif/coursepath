@@ -1,0 +1,109 @@
+.cert-card {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.cert-card:hover::before {
+  opacity: 1;
+}
+
+.cert-card[data-path="cybersecurity"]::before { background: var(--color-cybersecurity); }
+.cert-card[data-path="cloud"]::before { background: var(--color-cloud); }
+.cert-card[data-path="data"]::before { background: var(--color-data); }
+.cert-card[data-path="project"]::before { background: var(--color-project); }
+.cert-card[data-path="networking"]::before { background: var(--color-networking); }
+
+.cert-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.cert-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cert-card-icon.cybersecurity { background: rgba(239, 68, 68, 0.1); color: var(--color-cybersecurity); }
+.cert-card-icon.cloud { background: rgba(245, 158, 11, 0.1); color: var(--color-cloud); }
+.cert-card-icon.data { background: rgba(139, 92, 246, 0.1); color: var(--color-data); }
+.cert-card-icon.project { background: rgba(14, 165, 233, 0.1); color: var(--color-project); }
+.cert-card-icon.networking { background: rgba(34, 197, 94, 0.1); color: var(--color-networking); }
+
+.cert-card-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-xs);
+}
+
+.cert-card-org {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  font-weight: var(--font-medium);
+}
+
+.cert-card-description {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cert-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.cert-card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+.cert-card-meta-item svg {
+  opacity: 0.6;
+}
+
+.cert-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.cert-card-footer .btn {
+  font-size: var(--text-xs);
+}

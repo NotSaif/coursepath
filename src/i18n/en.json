@@ -1,0 +1,295 @@
+{
+  "brand": "CertPath",
+  "nav": {
+    "home": "Home",
+    "catalog": "Certifications",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "about": "About",
+    "getStarted": "Get Started",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out"
+  },
+  "hero": {
+    "tagline": "Your Career Starts Here",
+    "title": "Master Certifications",
+    "titleHighlight": "That Actually Get You Hired",
+    "subtitle": "Structured roadmaps with free videos, study guides, and progress tracking for the most in-demand professional certifications. Stop guessing — start certifying.",
+    "cta": "Explore Certifications",
+    "ctaSecondary": "View Pricing",
+    "stats": {
+      "certifications": "5 Certifications",
+      "chapters": "60+ Chapters",
+      "resources": "100% Free Resources",
+      "community": "Growing Community"
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Three simple steps to your next certification",
+    "step1": {
+      "title": "Choose Your Path",
+      "description": "Browse certifications by career path — Cybersecurity, Cloud, Data, Networking, or Project Management."
+    },
+    "step2": {
+      "title": "Study for Free",
+      "description": "Follow our curated roadmap with free YouTube videos, PDF guides, and practice questions for every chapter."
+    },
+    "step3": {
+      "title": "Get Certified",
+      "description": "Track your progress, complete all chapters, then register for the official exam with confidence."
+    }
+  },
+  "featured": {
+    "title": "Featured Certifications",
+    "subtitle": "Hand-picked certifications that are most demanded by employers in the job market",
+    "viewAll": "View All Certifications"
+  },
+  "careerPaths": {
+    "title": "Career Paths",
+    "subtitle": "Find the right certification for your career goals",
+    "cybersecurity": {
+      "name": "Cybersecurity",
+      "description": "Protect systems and data from threats. High demand across all industries."
+    },
+    "cloud": {
+      "name": "Cloud Computing",
+      "description": "Build and manage cloud infrastructure. The backbone of modern tech."
+    },
+    "data": {
+      "name": "Data Analytics",
+      "description": "Turn data into actionable insights. Every company needs data professionals."
+    },
+    "project": {
+      "name": "Project Management",
+      "description": "Lead teams and deliver projects on time. Universal skill across industries."
+    },
+    "networking": {
+      "name": "Networking",
+      "description": "Design and manage network infrastructure. Foundation of IT operations."
+    }
+  },
+  "whyCertPath": {
+    "title": "Why CertPath?",
+    "subtitle": "We make certification prep simple, structured, and completely free",
+    "feature1": {
+      "title": "Curated Resources",
+      "description": "Every video, PDF, and practice question is hand-picked for quality and relevance."
+    },
+    "feature2": {
+      "title": "Structured Roadmaps",
+      "description": "No more guessing what to study next. Follow a clear, chapter-by-chapter path."
+    },
+    "feature3": {
+      "title": "Track Your Progress",
+      "description": "Check off chapters as you complete them. See exactly how far you've come."
+    },
+    "feature4": {
+      "title": "100% Free Content",
+      "description": "All study materials are free resources already on the internet. We just organize them for you."
+    },
+    "feature5": {
+      "title": "Bilingual Support",
+      "description": "Full Arabic and English interface. Study comfortably in your preferred language."
+    },
+    "feature6": {
+      "title": "Job Market Focused",
+      "description": "We only feature certifications that employers actively look for when hiring."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Your Certification Journey?",
+    "subtitle": "Join thousands of professionals who are leveling up their careers with structured certification roadmaps.",
+    "button": "Get Started Free"
+  },
+  "catalog": {
+    "title": "Certification Catalog",
+    "subtitle": "Browse all available certifications organized by career path",
+    "filterAll": "All",
+    "search": "Search certifications...",
+    "chapters": "chapters",
+    "weeks": "weeks",
+    "startLearning": "Start Learning",
+    "continueLearning": "Continue Learning",
+    "noResults": "No certifications found matching your search."
+  },
+  "certDetail": {
+    "overview": "Overview",
+    "roadmap": "Study Roadmap",
+    "examInfo": "Exam Info",
+    "backToCatalog": "Back to Catalog",
+    "estimatedTime": "Estimated Study Time",
+    "weeks": "weeks",
+    "difficulty": "Difficulty",
+    "examCost": "Exam Cost",
+    "organization": "Organization",
+    "chaptersCompleted": "chapters completed",
+    "registerExam": "Register for Exam",
+    "officialSite": "Official Website",
+    "chapter": "Chapter",
+    "objectives": "Objectives",
+    "resources": "Resources",
+    "videos": "Videos",
+    "pdfs": "Study Materials",
+    "practice": "Practice Questions",
+    "hours": "hours",
+    "markComplete": "Mark Complete",
+    "completed": "Completed",
+    "locked": "Unlock Full Roadmap",
+    "lockedDesc": "Subscribe or purchase this course to access all chapters",
+    "freePreview": "Free Preview",
+    "examTips": "Exam Tips & Strategy",
+    "difficulties": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that works for you. All plans include free resource access.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save 30%",
+    "perMonth": "/month",
+    "perYear": "/year",
+    "oneTime": "one-time",
+    "free": {
+      "name": "Explorer",
+      "price": "Free",
+      "description": "Get a taste of what CertPath offers",
+      "features": [
+        "Browse all certification roadmaps",
+        "Access first 2 chapters of any cert",
+        "View resource previews",
+        "Community access"
+      ],
+      "cta": "Start Free"
+    },
+    "course": {
+      "name": "Single Course",
+      "price": "$4.99",
+      "priceBHD": "1.88 BHD",
+      "description": "Full access to one certification",
+      "features": [
+        "Complete roadmap for 1 certification",
+        "All chapters unlocked",
+        "All videos, PDFs & practice questions",
+        "Progress tracking",
+        "Lifetime access to that course"
+      ],
+      "cta": "Buy Course"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9.99",
+      "priceYearly": "$83.88",
+      "priceBHD": "3.75 BHD",
+      "description": "Unlimited access to everything",
+      "popular": "Most Popular",
+      "features": [
+        "All certifications unlocked",
+        "All chapters, videos & resources",
+        "Priority roadmap updates",
+        "Progress tracking & dashboard",
+        "New certifications as they launch",
+        "Priority support"
+      ],
+      "cta": "Go Pro"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Are the study resources really free?",
+      "a1": "Yes! All videos, PDFs, and practice questions are free resources available on the internet. You're paying for the curation, structure, and progress tracking that CertPath provides.",
+      "q2": "Can I cancel my subscription anytime?",
+      "a2": "Absolutely. You can cancel your Pro subscription at any time. You'll continue to have access until the end of your billing period.",
+      "q3": "What payment methods do you accept?",
+      "a3": "We accept all major credit/debit cards, Apple Pay, and Google Pay through our secure payment partner Stripe.",
+      "q4": "Do you offer refunds?",
+      "a4": "Yes, we offer a 7-day money-back guarantee on all paid plans. If you're not satisfied, contact us for a full refund.",
+      "q5": "Will more certifications be added?",
+      "a5": "Yes! We're constantly adding new certifications based on job market demand. Pro subscribers get access to new certifications as they launch."
+    },
+    "guarantee": "7-Day Money-Back Guarantee",
+    "guaranteeDesc": "Try risk-free. If you're not satisfied, we'll refund you — no questions asked.",
+    "applePay": "Apple Pay",
+    "securePay": "Secure payment powered by Stripe"
+  },
+  "dashboard": {
+    "title": "Your Dashboard",
+    "welcome": "Welcome back",
+    "noCerts": "You haven't started any certifications yet.",
+    "startExploring": "Start Exploring",
+    "activeCerts": "Active Certifications",
+    "progress": "Progress",
+    "continue": "Continue",
+    "overallProgress": "Overall Progress",
+    "chaptersCompleted": "Chapters Completed",
+    "certsInProgress": "Certs In Progress",
+    "hoursStudied": "Est. Hours Studied",
+    "recentActivity": "Recent Activity",
+    "completedChapter": "Completed",
+    "recommended": "Recommended Next",
+    "recommendedDesc": "Based on your interests, we think you'd enjoy these certifications"
+  },
+  "about": {
+    "title": "About CertPath",
+    "mission": "Our Mission",
+    "missionText": "We believe everyone deserves a clear path to career advancement. CertPath was built to solve a simple problem: getting certified shouldn't be confusing or expensive.",
+    "story": "Our Story",
+    "storyText": "CertPath started when we realized that all the resources to pass certification exams already exist for free on the internet — they're just scattered and unorganized. We created a platform that curates these resources into structured, easy-to-follow roadmaps so you can focus on learning, not searching.",
+    "values": {
+      "title": "What We Stand For",
+      "v1": {
+        "title": "Accessibility",
+        "description": "Quality education shouldn't have a paywall. We curate free resources so anyone can learn."
+      },
+      "v2": {
+        "title": "Structure",
+        "description": "Information without organization is overwhelming. We provide the structure you need."
+      },
+      "v3": {
+        "title": "Relevance",
+        "description": "We only feature certifications that the job market actively demands."
+      }
+    },
+    "contact": "Contact Us",
+    "contactText": "Have questions or suggestions? We'd love to hear from you.",
+    "email": "hello@certpath.io"
+  },
+  "footer": {
+    "description": "Structured certification roadmaps with free resources to help you get certified and advance your career.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2026 CertPath. All rights reserved.",
+    "madeWith": "Made with ❤️ for career growth"
+  },
+  "payment": {
+    "title": "Complete Your Purchase",
+    "processing": "Processing...",
+    "success": "Payment Successful!",
+    "successDesc": "You now have full access. Start learning!",
+    "error": "Payment failed. Please try again.",
+    "orPayWith": "Or pay with card",
+    "cardNumber": "Card Number",
+    "expiry": "Expiry",
+    "cvc": "CVC",
+    "pay": "Pay",
+    "secure": "Secured by Stripe",
+    "close": "Close"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "viewMore": "View More",
+    "learnMore": "Learn More"
+  }
+}

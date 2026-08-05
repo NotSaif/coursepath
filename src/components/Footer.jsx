@@ -33,7 +33,7 @@ export default function Footer() {
             <h4>{t('footer.company')}</h4>
             <ul>
               <li><Link to="/about">{t('nav.about')}</Link></li>
-              <li><a href="mailto:hello@certpath.io">{t('about.contact')}</a></li>
+              <li><a href="mailto:hello@coursepath.io">{t('about.contact')}</a></li>
             </ul>
           </div>
 

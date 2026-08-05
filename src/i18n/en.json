@@ -1,5 +1,5 @@
 {
-  "brand": "CertPath",
+  "brand": "CoursePath",
   "nav": {
     "home": "Home",
     "catalog": "Certifications",
@@ -71,7 +71,7 @@
     }
   },
   "whyCertPath": {
-    "title": "Why CertPath?",
+    "title": "Why CoursePath?",
     "subtitle": "We make certification prep simple, structured, and completely free",
     "feature1": {
       "title": "Curated Resources",
@@ -158,7 +158,7 @@
     "free": {
       "name": "Explorer",
       "price": "Free",
-      "description": "Get a taste of what CertPath offers",
+      "description": "Get a taste of what CoursePath offers",
       "features": [
         "Browse all certification roadmaps",
         "Access first 2 chapters of any cert",
@@ -201,11 +201,11 @@
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "Are the study resources really free?",
-      "a1": "Yes! All videos, PDFs, and practice questions are free resources available on the internet. You're paying for the curation, structure, and progress tracking that CertPath provides.",
+      "a1": "Yes! All videos, PDFs, and practice questions are free resources available on the internet. You're paying for the curation, structure, and progress tracking that CoursePath provides.",
       "q2": "Can I cancel my subscription anytime?",
       "a2": "Absolutely. You can cancel your Pro subscription at any time. You'll continue to have access until the end of your billing period.",
       "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit/debit cards, Apple Pay, and Google Pay through our secure payment partner Stripe.",
+      "a3": "We accept all major credit/debit cards, Apple Pay, and Google Pay through our secure payment partner.",
       "q4": "Do you offer refunds?",
       "a4": "Yes, we offer a 7-day money-back guarantee on all paid plans. If you're not satisfied, contact us for a full refund.",
       "q5": "Will more certifications be added?",
@@ -214,7 +214,7 @@
     "guarantee": "7-Day Money-Back Guarantee",
     "guaranteeDesc": "Try risk-free. If you're not satisfied, we'll refund you — no questions asked.",
     "applePay": "Apple Pay",
-    "securePay": "Secure payment powered by Stripe"
+    "securePay": "Secure payment"
   },
   "dashboard": {
     "title": "Your Dashboard",
@@ -234,11 +234,11 @@
     "recommendedDesc": "Based on your interests, we think you'd enjoy these certifications"
   },
   "about": {
-    "title": "About CertPath",
+    "title": "About CoursePath",
     "mission": "Our Mission",
-    "missionText": "We believe everyone deserves a clear path to career advancement. CertPath was built to solve a simple problem: getting certified shouldn't be confusing or expensive.",
+    "missionText": "We believe everyone deserves a clear path to career advancement. CoursePath was built to solve a simple problem: getting certified shouldn't be confusing or expensive.",
     "story": "Our Story",
-    "storyText": "CertPath started when we realized that all the resources to pass certification exams already exist for free on the internet — they're just scattered and unorganized. We created a platform that curates these resources into structured, easy-to-follow roadmaps so you can focus on learning, not searching.",
+    "storyText": "CoursePath started when we realized that all the resources to pass certification exams already exist for free on the internet — they're just scattered and unorganized. We created a platform that curates these resources into structured, easy-to-follow roadmaps so you can focus on learning, not searching.",
     "values": {
       "title": "What We Stand For",
       "v1": {
@@ -256,7 +256,7 @@
     },
     "contact": "Contact Us",
     "contactText": "Have questions or suggestions? We'd love to hear from you.",
-    "email": "hello@certpath.io"
+    "email": "hello@coursepath.io"
   },
   "footer": {
     "description": "Structured certification roadmaps with free resources to help you get certified and advance your career.",
@@ -265,7 +265,7 @@
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "copyright": "© 2026 CertPath. All rights reserved.",
+    "copyright": "© 2026 CoursePath. All rights reserved.",
     "madeWith": "Made with ❤️ for career growth"
   },
   "payment": {

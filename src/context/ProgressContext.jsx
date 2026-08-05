@@ -3,7 +3,7 @@ import { certifications } from '../data/certifications';
 
 const ProgressContext = createContext();
 
-const STORAGE_KEY = 'certpath_progress';
+const STORAGE_KEY = 'coursepath_progress';
 
 function loadProgress() {
   try {

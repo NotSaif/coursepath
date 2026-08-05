@@ -161,7 +161,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, () => {
-  console.log(`\n🚀 CertPath API server running on port ${PORT}`);
+  console.log(`\n🚀 CoursePath API server running on port ${PORT}`);
   console.log(`   Gateway: Lemon Squeezy (Merchant of Record - No CR Needed!)`);
   console.log(`   Supports: Apple Pay + Google Pay + All Credit/Debit Cards`);
   console.log(`   Client URL: ${CLIENT_URL}\n`);

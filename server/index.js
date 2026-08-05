@@ -1,179 +1,149 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import Stripe from 'stripe';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PRICES, getCheckoutMode } from './stripe-products.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// ─── Validate Environment ───
-if (!process.env.STRIPE_SECRET_KEY) {
-  console.error('\n❌  STRIPE_SECRET_KEY is not set!');
-  console.error('   Copy .env.example to .env and add your Stripe keys.');
-  console.error('   Get keys from: https://dashboard.stripe.com/test/apikeys\n');
-  process.exit(1);
-}
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const PORT = process.env.PORT || 3001;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 
-// ─── Middleware ───
+// Tap Payments API Key (Test key starts with sk_test_...)
+const TAP_SECRET_KEY = process.env.TAP_SECRET_KEY || 'sk_test_XDiagnosis_Tap_Placeholder_Key';
 
-// Stripe webhooks need raw body — must be BEFORE express.json()
-app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
-  const sig = req.headers['stripe-signature'];
-  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+// Pricing Amounts & Currencies
+const PLAN_AMOUNTS = {
+  course: { amount: 4.99, currency: 'USD', name: 'Single Course Access' },
+  pro_monthly: { amount: 9.99, currency: 'USD', name: 'Pro Subscription (Monthly)' },
+  pro_yearly: { amount: 83.88, currency: 'USD', name: 'Pro Subscription (Yearly)' },
+};
 
-  let event;
-  try {
-    if (webhookSecret) {
-      event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
-    } else {
-      // If no webhook secret configured, parse directly (dev mode only)
-      event = JSON.parse(req.body.toString());
-      console.warn('⚠️  No STRIPE_WEBHOOK_SECRET set — webhook signature not verified');
-    }
-  } catch (err) {
-    console.error('❌ Webhook signature verification failed:', err.message);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
-  }
-
-  // Handle the event
-  switch (event.type) {
-    case 'checkout.session.completed': {
-      const session = event.data.object;
-      console.log('✅ Payment successful!');
-      console.log('   Customer email:', session.customer_details?.email);
-      console.log('   Amount:', session.amount_total / 100, session.currency?.toUpperCase());
-      console.log('   Mode:', session.mode);
-      console.log('   Session ID:', session.id);
-
-      // TODO: Update your database here
-      // - Mark the user's course/subscription as active
-      // - Send confirmation email
-      // - Grant access to locked chapters
-      break;
-    }
-
-    case 'customer.subscription.updated': {
-      const subscription = event.data.object;
-      console.log('📋 Subscription updated:', subscription.id, '→', subscription.status);
-      break;
-    }
-
-    case 'customer.subscription.deleted': {
-      const subscription = event.data.object;
-      console.log('🚫 Subscription cancelled:', subscription.id);
-      // TODO: Revoke access
-      break;
-    }
-
-    default:
-      console.log(`ℹ️  Unhandled event: ${event.type}`);
-  }
-
-  res.json({ received: true });
-});
-
-// JSON parsing for all other routes
 app.use(express.json());
 app.use(cors({ origin: CLIENT_URL }));
 
-// ─── API Routes ───
-
-// Health check
+// ─── Health Check ───
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  res.json({
+    status: 'ok',
+    gateway: 'Tap Payments (GCC / Bahrain 🇧🇭)',
+    timestamp: new Date().toISOString()
+  });
 });
 
-// Create a Stripe Checkout session
+// ─── Create Checkout Session (Tap Payments) ───
 app.post('/api/create-checkout-session', async (req, res) => {
   try {
     const { priceType, certId, certName } = req.body;
 
-    // Validate priceType
-    if (!priceType || !PRICES[priceType]) {
-      return res.status(400).json({
-        error: `Invalid priceType. Must be one of: ${Object.keys(PRICES).join(', ')}`
-      });
+    const plan = PLAN_AMOUNTS[priceType || 'pro_monthly'];
+    if (!plan) {
+      return res.status(400).json({ error: 'Invalid price plan type' });
     }
 
-    const priceId = PRICES[priceType];
-    const mode = getCheckoutMode(priceType);
-
-    // Check if using placeholder price IDs
-    if (priceId.includes('placeholder')) {
-      return res.status(400).json({
-        error: 'Stripe Price IDs not configured. Create products in Stripe Dashboard and update server/stripe-products.js or set environment variables.',
-        setup_url: 'https://dashboard.stripe.com/test/products'
-      });
+    // Check if TAP key is set
+    if (!process.env.TAP_SECRET_KEY) {
+      console.warn('⚠️  TAP_SECRET_KEY is not set in .env file!');
     }
 
-    // Build session configuration
-    const sessionConfig = {
-      mode,
-      payment_method_types: ['card'],
-      line_items: [
-        {
-          price: priceId,
-          quantity: 1,
-        },
-      ],
-      success_url: `${CLIENT_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${CLIENT_URL}/cancel`,
-      // Apple Pay & Google Pay are enabled automatically
-      // when "card" payment method is included and the
-      // customer's device/browser supports it
-      payment_method_options: {
-        card: {
-          setup_future_usage: mode === 'subscription' ? undefined : undefined,
-        },
+    // Call Tap Payments Charge API
+    // Documentation: https://developers.tap.company/reference/charges
+    const response = await fetch('https://api.tap.company/v2/charges', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${TAP_SECRET_KEY}`,
+        'Content-Type': 'application/json'
       },
-      // Allow promotion codes
-      allow_promotion_codes: true,
-      // Billing address collection
-      billing_address_collection: 'auto',
-      // Metadata for tracking
-      metadata: {
-        certId: certId || '',
-        certName: certName || '',
-        priceType,
-      },
-    };
-
-    // For subscriptions, let Stripe create the customer automatically
-    if (mode === 'subscription') {
-      sessionConfig.subscription_data = {
+      body: JSON.stringify({
+        amount: plan.amount,
+        currency: plan.currency,
+        threeDSecure: true,
+        save_card: false,
+        description: certName ? `CertPath: ${certName}` : plan.name,
+        statement_descriptor: 'CertPath',
         metadata: {
           certId: certId || '',
-          priceType,
+          priceType: priceType || 'pro_monthly',
         },
-      };
+        reference: {
+          transaction: `txn_${Date.now()}`,
+          order: `ord_${Date.now()}`
+        },
+        receipt: {
+          email: true,
+          sms: false
+        },
+        customer: {
+          first_name: 'CertPath',
+          last_name: 'Student',
+          email: 'student@certpath.io'
+        },
+        source: {
+          id: 'src_all' // Enables Apple Pay, BenefitPay, Mada, and Credit/Debit Cards!
+        },
+        redirect: {
+          url: `${CLIENT_URL}/success`
+        }
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      // Handle Tap API error
+      console.error('❌ Tap API Error:', data);
+      return res.status(response.status).json({
+        error: data.errors?.[0]?.description || data.message || 'Failed to create payment link'
+      });
     }
 
-    const session = await stripe.checkout.sessions.create(sessionConfig);
+    // Return the payment checkout URL
+    const paymentUrl = data.transaction?.url;
+    if (paymentUrl) {
+      res.json({ url: paymentUrl, chargeId: data.id });
+    } else {
+      res.status(500).json({ error: 'No transaction URL returned from payment provider' });
+    }
 
-    res.json({ url: session.url });
   } catch (err) {
-    console.error('❌ Error creating checkout session:', err.message);
+    console.error('❌ Server Error during checkout creation:', err.message);
     res.status(500).json({ error: err.message });
   }
 });
 
-// Get session details (for success page)
-app.get('/api/checkout-session/:sessionId', async (req, res) => {
+// ─── Tap Webhook Endpoint ───
+app.post('/api/webhook', (req, res) => {
+  const event = req.body;
+  console.log('🔔 Tap Webhook event received:', event?.status, event?.id);
+
+  if (event?.status === 'CAPTURED') {
+    console.log('✅ Payment captured successfully for charge:', event.id);
+    console.log('   Amount:', event.amount, event.currency);
+    console.log('   Customer:', event.customer?.email);
+    console.log('   Metadata:', event.metadata);
+  }
+
+  res.json({ status: 'success' });
+});
+
+// ─── Get Charge Details ───
+app.get('/api/checkout-session/:chargeId', async (req, res) => {
   try {
-    const session = await stripe.checkout.sessions.retrieve(req.params.sessionId);
+    const { chargeId } = req.params;
+    const response = await fetch(`https://api.tap.company/v2/charges/${chargeId}`, {
+      headers: {
+        'Authorization': `Bearer ${TAP_SECRET_KEY}`
+      }
+    });
+
+    const data = await response.json();
     res.json({
-      status: session.payment_status,
-      customerEmail: session.customer_details?.email,
-      amountTotal: session.amount_total,
-      currency: session.currency,
-      metadata: session.metadata,
+      status: data.status === 'CAPTURED' ? 'paid' : data.status,
+      customerEmail: data.customer?.email,
+      amountTotal: Math.round(data.amount * 100),
+      currency: data.currency,
+      metadata: data.metadata
     });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -185,7 +155,6 @@ if (process.env.NODE_ENV === 'production') {
   const distPath = path.join(__dirname, '..', 'dist');
   app.use(express.static(distPath));
 
-  // SPA fallback — serve index.html for all non-API routes
   app.get('*', (req, res) => {
     if (!req.path.startsWith('/api')) {
       res.sendFile(path.join(distPath, 'index.html'));
@@ -193,10 +162,8 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// ─── Start Server ───
 app.listen(PORT, () => {
-  console.log(`\n🚀 CertPath API server running on port ${PORT}`);
-  console.log(`   Client URL: ${CLIENT_URL}`);
-  console.log(`   Stripe mode: ${process.env.STRIPE_SECRET_KEY?.startsWith('sk_live') ? '🟢 LIVE' : '🟡 TEST'}`);
-  console.log(`   Webhook secret: ${process.env.STRIPE_WEBHOOK_SECRET ? '✅ Configured' : '⚠️  Not set'}\n`);
+  console.log(`\n🇧🇭 CertPath API server running on port ${PORT}`);
+  console.log(`   Gateway: Tap Payments (Apple Pay + BenefitPay + GCC Cards)`);
+  console.log(`   Client URL: ${CLIENT_URL}\n`);
 });

@@ -69,9 +69,9 @@ app.post('/api/create-checkout-session', async (req, res) => {
           attributes: {
             checkout_data: {
               custom: {
-                certId: certId || '',
-                priceType: priceType || 'pro_monthly',
-                certName: certName || ''
+                cert_id: (certId || 'none').toString(),
+                price_type: (priceType || 'pro_monthly').toString(),
+                cert_name: (certName || 'CoursePath Pro').toString()
               }
             },
             product_options: {

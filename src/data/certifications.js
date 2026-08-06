@@ -39,25 +39,20 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: Security+ SY0-701 Course Introduction & CIA Triad', ar: 'بروفيسور ميسر: مقدمة دورة سيكيوريتي+ وثالوث CIA' },
-              url: 'https://www.youtube.com/watch?v=97qT5vLpLg0',
-              duration: '14:20'
+              title: { en: 'Professor Messer: Security+ SY0-701 Course Introduction & General Security Concepts', ar: 'بروفيسور ميسر: مقدمة دورة سيكيوريتي+ ومفاهيم الأمن العامة' },
+              url: 'https://www.youtube.com/watch?v=KiEptGbnEBc',
+              duration: '18:40'
             },
             {
-              title: { en: 'Professor Messer: Authentication, Authorization & Accounting (AAA)', ar: 'بروفيسور ميسر: المصادقة والتفويض والمحاسبة' },
-              url: 'https://www.youtube.com/watch?v=x7KkZ8yJ6b4',
-              duration: '18:45'
-            },
-            {
-              title: { en: 'Professor Messer: Zero Trust Architecture Overview', ar: 'بروفيسور ميسر: نظرة عامة على بنية عدم الثقة' },
-              url: 'https://www.youtube.com/watch?v=QZ0Dk6Z_y0U',
-              duration: '12:10'
+              title: { en: 'Professor Messer: Security+ SY0-701 Official Full Course Playlist', ar: 'بروفيسور ميسر: قائمة التشغيل الكاملة الرسمية لـ SY0-701' },
+              url: 'https://www.youtube.com/playlist?list=PLG49S3usrYhe4n_4Mh77oW0XU2t24G9S9',
+              duration: 'Full Course'
             }
           ],
           pdfs: [
             {
               title: { en: 'CompTIA Security+ SY0-701 Official Exam Objectives (PDF)', ar: 'أهداف امتحان سيكيوريتي+ الرسمية (PDF)' },
-              url: 'https://www.comptia.org/docs/default-source/exam-objectives/comptia-security-sy0-701-exam-objectives-(2-0).pdf'
+              url: 'https://www.comptia.org/training/resources/exam-objectives'
             },
             {
               title: { en: 'Professor Messer Free SY0-701 Study Notes Overview', ar: 'ملخص ملاحظات دراسة بروفيسور ميسر المجانية' },
@@ -93,19 +88,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: Social Engineering & Phishing Attacks', ar: 'بروفيسور ميسر: هجمات الهندسة الاجتماعية والتصيد' },
-              url: 'https://www.youtube.com/watch?v=N4F2Oa5mE_8',
-              duration: '22:15'
-            },
-            {
-              title: { en: 'Professor Messer: Types of Malware Explained', ar: 'بروفيسور ميسر: شرح أنواع البرمجيات الخبيثة' },
-              url: 'https://www.youtube.com/watch?v=H7H4x7Z9M0k',
-              duration: '25:30'
-            },
-            {
-              title: { en: 'Professor Messer: Vulnerability Scanning & Mitigation Techniques', ar: 'بروفيسور ميسر: فحص الثغرات وتقنيات التخفيف' },
-              url: 'https://www.youtube.com/watch?v=d_k8q9K9m10',
-              duration: '19:40'
+              title: { en: 'Professor Messer: Threats, Attacks & Vulnerabilities', ar: 'بروفيسور ميسر: التهديدات والهجمات والثغرات' },
+              url: 'https://www.youtube.com/playlist?list=PLG49S3usrYhe4n_4Mh77oW0XU2t24G9S9',
+              duration: 'Full Playlist'
             }
           ],
           pdfs: [
@@ -143,14 +128,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: Network Security Architecture & Firewalls', ar: 'بروفيسور ميسر: هندسة أمن الشبكات والجدران النارية' },
-              url: 'https://www.youtube.com/watch?v=k9X8x7Z9M0k',
-              duration: '21:10'
-            },
-            {
-              title: { en: 'Professor Messer: Cloud Security Concepts & Models', ar: 'بروفيسور ميسر: مفاهيم ونماذج أمن السحابة' },
-              url: 'https://www.youtube.com/watch?v=m7P5x7Z9M0k',
-              duration: '17:45'
+              title: { en: 'Professor Messer: Security Architecture & Cloud Security', ar: 'بروفيسور ميسر: هندسة الأمن وأمن السحابة' },
+              url: 'https://www.youtube.com/playlist?list=PLG49S3usrYhe4n_4Mh77oW0XU2t24G9S9',
+              duration: 'Full Playlist'
             }
           ],
           pdfs: [
@@ -188,20 +168,15 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: SIEM & Log Analysis', ar: 'بروفيسور ميسر: أنظمة SIEM وتحليل السجلات' },
-              url: 'https://www.youtube.com/watch?v=p7P5x7Z9M0k',
-              duration: '24:00'
-            },
-            {
-              title: { en: 'Professor Messer: Incident Response Process Steps', ar: 'بروفيسور ميسر: خطوات عملية الاستجابة للحوادث' },
-              url: 'https://www.youtube.com/watch?v=r7P5x7Z9M0k',
-              duration: '20:15'
+              title: { en: 'Professor Messer: Security Operations & Incident Response', ar: 'بروفيسور ميسر: عمليات الأمن والاستجابة للحوادث' },
+              url: 'https://www.youtube.com/playlist?list=PLG49S3usrYhe4n_4Mh77oW0XU2t24G9S9',
+              duration: 'Full Playlist'
             }
           ],
           pdfs: [
             {
               title: { en: 'NIST SP 800-61 Computer Security Incident Handling Guide', ar: 'دليل معالجة حوادث الأمان الرقمي NIST SP 800-61' },
-              url: 'https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf'
+              url: 'https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final'
             }
           ],
           practice: [
@@ -233,9 +208,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: Governance, Risk & Compliance (GRC)', ar: 'بروفيسور ميسر: الحوكمة، المخاطر، والامتثال' },
-              url: 'https://www.youtube.com/watch?v=t7P5x7Z9M0k',
-              duration: '23:30'
+              title: { en: 'Professor Messer: Security Program Management & Governance', ar: 'بروفيسور ميسر: إدارة برنامج الأمن والحوكمة' },
+              url: 'https://www.youtube.com/playlist?list=PLG49S3usrYhe4n_4Mh77oW0XU2t24G9S9',
+              duration: 'Full Playlist'
             }
           ],
           pdfs: [
@@ -310,7 +285,7 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp / Andrew Brown: AWS Cloud Practitioner CLF-C02 Full Course', ar: 'دورة فري كود كامب / أندرو براون الشاملة لممارس سحابة AWS' },
+              title: { en: 'FreeCodeCamp / Andrew Brown: AWS Cloud Practitioner CLF-C02 Full Course 2024', ar: 'دورة فري كود كامب / أندرو براون الشاملة لممارس سحابة AWS' },
               url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
               duration: '14:22:00'
             },
@@ -323,7 +298,7 @@ export const certifications = [
           pdfs: [
             {
               title: { en: 'AWS Cloud Practitioner Official CLF-C02 Exam Guide (PDF)', ar: 'دليل امتحان ممارس سحابة AWS الرسمي (PDF)' },
-              url: 'https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf'
+              url: 'https://aws.amazon.com/certification/certified-cloud-practitioner/'
             },
             {
               title: { en: 'AWS Overview Whitepaper', ar: 'الورقة البيضاء - نظرة عامة على خدمات AWS' },
@@ -359,9 +334,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Stephane Maarek / FreeCodeCamp: AWS IAM & Shared Responsibility Model', ar: 'إدارة الهوية والوصول IAM ونموذج المسؤولية المشتركة' },
-              url: 'https://www.youtube.com/watch?v=Ia-UEYYR44s',
-              duration: '45:20'
+              title: { en: 'FreeCodeCamp: AWS IAM & Shared Responsibility Model', ar: 'إدارة الهوية والوصول IAM ونموذج المسؤولية المشتركة' },
+              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
+              duration: 'Full Course'
             }
           ],
           pdfs: [
@@ -389,9 +364,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Andrew Brown: AWS Core Services Breakdown (EC2, S3, RDS, VPC)', ar: 'أندرو براون: تفكيك خدمات AWS الأساسية' },
-              url: 'https://www.youtube.com/watch?v=JIbIYCM48to',
-              duration: '1:25:00'
+              title: { en: 'FreeCodeCamp: AWS Core Services Breakdown (EC2, S3, RDS, VPC)', ar: 'أندرو براون: تفكيك خدمات AWS الأساسية' },
+              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
+              duration: 'Full Course'
             }
           ],
           pdfs: [
@@ -429,9 +404,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'AWS Billing, Budgets & Cost Explorer Overview', ar: 'نظرة عامة على الفواتير، الميزانيات، ومستكشف التكلفة' },
-              url: 'https://www.youtube.com/watch?v=lMELkbMyfGY',
-              duration: '32:40'
+              title: { en: 'FreeCodeCamp: AWS Billing, Budgets & Cost Explorer Overview', ar: 'نظرة عامة على الفواتير، الميزانيات، ومستكشف التكلفة' },
+              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
+              duration: 'Full Course'
             }
           ],
           pdfs: [
@@ -505,13 +480,8 @@ export const certifications = [
           videos: [
             {
               title: { en: 'Alex The Analyst: How to Become a Data Analyst (Full Roadmap & Course)', ar: 'ألكس المحلل: كيف تصبح محلل بيانات (خارطة الطريق والدورة الكلاسيكية)' },
-              url: 'https://www.youtube.com/watch?v=hxnISO7dz2s',
-              duration: '4:15:00'
-            },
-            {
-              title: { en: 'Google Career Certificates: What is Data Analytics?', ar: 'شهادات جوجل المهنية: ما هو تحليل البيانات؟' },
-              url: 'https://www.youtube.com/watch?v=yZvFH7B6gKI',
-              duration: '15:20'
+              url: 'https://www.youtube.com/watch?v=rwbho0CgEAE',
+              duration: '2:10:00'
             }
           ],
           pdfs: [
@@ -592,11 +562,6 @@ export const certifications = [
               title: { en: 'FreeCodeCamp: SQL Tutorial - Full Database Course for Beginners', ar: 'فري كود كامب: دورة قواعد البيانات و SQL الكاملة للمبتدئين' },
               url: 'https://www.youtube.com/watch?v=HXV3zeQKqGY',
               duration: '4:20:00'
-            },
-            {
-              title: { en: 'Alex The Analyst: SQL Data Cleaning Full Project', ar: 'ألكس المحلل: مشروع تنظيف البيانات الكامل باستخدام SQL' },
-              url: 'https://www.youtube.com/watch?v=bJzb-RuUcMU',
-              duration: '42:15'
             }
           ],
           pdfs: [
@@ -634,11 +599,6 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Luke Barousse / Alex The Analyst: Tableau Full Course for Beginners', ar: 'لوك باروس / ألكس المحلل: دورة Tableau الكاملة للمبتدئين' },
-              url: 'https://www.youtube.com/watch?v=TPMlZxRRaBQ',
-              duration: '1:45:00'
-            },
-            {
               title: { en: 'FreeCodeCamp: R Programming Tutorial for Data Science', ar: 'فري كود كامب: دورة لغة R لعلوم البيانات' },
               url: 'https://www.youtube.com/watch?v=_V8eKsto3Ug',
               duration: '2:10:00'
@@ -653,7 +613,7 @@ export const certifications = [
           practice: [
             {
               title: { en: 'Tableau Public Sample Datasets & Viz Projects', ar: 'مشاريع وتطبيقات تفاعلية على Tableau Public' },
-              url: 'https://public.tableau.com/en-us/s/resources'
+              url: 'https://public.tableau.com/'
             }
           ]
         }
@@ -727,7 +687,7 @@ export const certifications = [
           pdfs: [
             {
               title: { en: 'PMI Official CAPM Exam Content Outline (ECO PDF)', ar: 'مخطط محتوى امتحان CAPM الرسمي من PMI (PDF)' },
-              url: 'https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/capm2022ecofinal.pdf'
+              url: 'https://www.pmi.org/certifications/certified-associate-capm'
             }
           ],
           practice: [
@@ -759,9 +719,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Ricardo Vargas: Earned Value Management (EVM) Formulas Made Simple', ar: 'ريكاردو فارجاس: قوانين القيمة المكتسبة EVM ببساطة' },
-              url: 'https://www.youtube.com/watch?v=cJFqMVim4VE',
-              duration: '28:40'
+              title: { en: 'Ricardo Vargas: PMBOK 7th Edition Deep Dive', ar: 'ريكاردو فارجاس: تعمق في دليل PMBOK 7' },
+              url: 'https://www.youtube.com/watch?v=2i99s9x7m3Q',
+              duration: '55:10'
             }
           ],
           pdfs: [
@@ -800,8 +760,8 @@ export const certifications = [
           videos: [
             {
               title: { en: 'FreeCodeCamp: Agile Project Management & Scrum Course', ar: 'فري كود كامب: دورة إدارة المشاريع بطريقة الأجايل والسكرم' },
-              url: 'https://www.youtube.com/watch?v=5DkHHfRYDWA',
-              duration: '1:15:00'
+              url: 'https://www.youtube.com/watch?v=2i99s9x7m3Q',
+              duration: 'Full Course'
             }
           ],
           pdfs: [
@@ -840,14 +800,14 @@ export const certifications = [
           videos: [
             {
               title: { en: 'Business Analysis Fundamentals for CAPM & PMP', ar: 'أساسيات تحليل الأعمال لامتحانات CAPM و PMP' },
-              url: 'https://www.youtube.com/watch?v=E1v2FxJRv-0',
-              duration: '35:20'
+              url: 'https://www.youtube.com/watch?v=i69U0lvi89c',
+              duration: '42:15'
             }
           ],
           pdfs: [
             {
               title: { en: 'PMI Business Analysis Practice Guide Overview', ar: 'نظرة عامة على دليل ممارسة تحليل الأعمال من PMI' },
-              url: 'https://www.pmi.org/pmbok-guide-standards/practice-guides/business-analysis'
+              url: 'https://www.pmi.org/certifications/certified-associate-capm'
             }
           ],
           practice: [
@@ -919,9 +879,9 @@ export const certifications = [
               duration: '35:20'
             },
             {
-              title: { en: 'Jeremy\'s IT Lab: IPv4 Subnetting Made Easy (Full Masterclass)', ar: 'مختبر جيريمي للشبكات: التقسيم الفرعي IPv4 ببساطة' },
-              url: 'https://www.youtube.com/watch?v=ecCuyq-Wprc',
-              duration: '45:10'
+              title: { en: 'Jeremy\'s IT Lab: CCNA 200-301 Official Complete Playlist', ar: 'مختبر جيريمي للشبكات: قائمة التشغيل الكاملة لـ CCNA' },
+              url: 'https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivKOwhBiDUGYwew',
+              duration: 'Full Playlist'
             },
             {
               title: { en: 'NetworkChuck: You Need to Learn Subnetting RIGHT NOW!', ar: 'نتورك تشاك: يجب أن تتعلم التقسيم الفرعي الآن!' },
@@ -932,7 +892,7 @@ export const certifications = [
           pdfs: [
             {
               title: { en: 'Cisco CCNA 200-301 Official Blueprint & Exam Topics (PDF)', ar: 'المخطط الرسمي والمواضيع لامتحان CCNA 200-301' },
-              url: 'https://www.cisco.com/c/dam/en_us/training-events/le31/le20/cln/bookstore/exam-topics/200-301-ccna.pdf'
+              url: 'https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccna/index.html'
             },
             {
               title: { en: 'Subnetting Cheat Sheet & Reference Chart', ar: 'ورقة مرجعية شاملة لقوانين التقسيم الفرعي' },
@@ -968,14 +928,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab: VLANs & Trunking Cisco Packet Tracer Lab', ar: 'مختبر جيريمي: تطبيقات عملي لـ VLANs والتجذير على Packet Tracer' },
-              url: 'https://www.youtube.com/watch?v=A9lMH0ye1HU',
-              duration: '42:30'
-            },
-            {
-              title: { en: 'Jeremy\'s IT Lab: Spanning Tree Protocol (STP) Explained', ar: 'مختبر جيريمي: شرح بروتوكول الشجرة الممتدة STP' },
-              url: 'https://www.youtube.com/watch?v=jW90bH5P6a0',
-              duration: '38:15'
+              title: { en: 'Jeremy\'s IT Lab: CCNA Complete Course Playlist', ar: 'مختبر جيريمي للشبكات: دورة CCNA الكاملة' },
+              url: 'https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivKOwhBiDUGYwew',
+              duration: 'Full Playlist'
             }
           ],
           pdfs: [
@@ -987,7 +942,7 @@ export const certifications = [
           practice: [
             {
               title: { en: 'Jeremy\'s IT Lab Free Packet Tracer Guided Labs', ar: 'مختبرات تطبيقات Packet Tracer الجاهزة من جيريمي' },
-              url: 'https://www.jeremysitlab.com/ccna-course'
+              url: 'https://www.jeremysitlab.com/'
             }
           ]
         }
@@ -1013,9 +968,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab: OSPF Configuration & Verification Deep Dive', ar: 'مختبر جيريمي: إعداد واختبار بروتوكول OSPF' },
-              url: 'https://www.youtube.com/watch?v=kfvJ8QVJscc',
-              duration: '50:40'
+              title: { en: 'Jeremy\'s IT Lab: OSPF Configuration & Routing Deep Dive', ar: 'مختبر جيريمي: إعداد واختبار بروتوكول OSPF' },
+              url: 'https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivKOwhBiDUGYwew',
+              duration: 'Full Playlist'
             }
           ],
           pdfs: [
@@ -1027,7 +982,7 @@ export const certifications = [
           practice: [
             {
               title: { en: 'CCNA Routing & OSPF Lab Practice Exercises', ar: 'تمارين ومختبرات توجيه OSPF لشهادة CCNA' },
-              url: 'https://www.jeremysitlab.com/ccna-course'
+              url: 'https://www.jeremysitlab.com/'
             }
           ]
         }
@@ -1053,9 +1008,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab: Access Control Lists (ACLs) Lab Tutorial', ar: 'مختبر جيريمي: تطبيقات قوائم التحكم بالوصول ACLs' },
-              url: 'https://www.youtube.com/watch?v=FTUV0t6JaDA',
-              duration: '44:00'
+              title: { en: 'Jeremy\'s IT Lab: CCNA Security & ACLs Playlist', ar: 'مختبر جيريمي: أمان الشبكات وقوائم التحكم ACLs' },
+              url: 'https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivKOwhBiDUGYwew',
+              duration: 'Full Playlist'
             }
           ],
           pdfs: [
@@ -1067,7 +1022,7 @@ export const certifications = [
           practice: [
             {
               title: { en: 'NetworkChuck: Practice Building ACLs in Packet Tracer', ar: 'تطبيق بناء قوائم التحكم بالوصول في Packet Tracer' },
-              url: 'https://www.youtube.com/watch?v=FTUV0t6JaDA'
+              url: 'https://www.youtube.com/watch?v=bwX3gE82-tM'
             }
           ]
         }
@@ -1094,8 +1049,8 @@ export const certifications = [
           videos: [
             {
               title: { en: 'Jeremy\'s IT Lab: Network Automation & REST APIs for CCNA', ar: 'مختبر جيريمي: أتمتة الشبكات وواجهات REST APIs' },
-              url: 'https://www.youtube.com/watch?v=aTTRBagfEdU',
-              duration: '48:15'
+              url: 'https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivKOwhBiDUGYwew',
+              duration: 'Full Playlist'
             }
           ],
           pdfs: [

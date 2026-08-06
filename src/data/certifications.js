@@ -41,19 +41,13 @@ export const certifications = [
             {
               title: { en: 'Professor Messer: 1.1 Security Controls - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ١.١ ضوابط الأمان' },
               url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/security-controls-sy0-701/',
-              embedId: 'inWWhr5tnEA',
+              embedId: 'STM3EUvL7wg',
               duration: '12:45'
             },
             {
-              title: { en: 'Professor Messer: 1.2 CIA Triad & AAA Controls', ar: 'بروفيسور ميسر: ١.٢ ثالوث CIA والمصادقة AAA' },
-              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/cia-triad-and-aaa-sy0-701/',
-              embedId: 'inWWhr5tnEA',
-              duration: '18:20'
-            },
-            {
-              title: { en: 'Professor Messer: 1.3 Zero Trust Architecture', ar: 'بروفيسور ميسر: ١.٣ بنية عدم الثقة' },
+              title: { en: 'Professor Messer: 1.3 Zero Trust Architecture - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ١.٣ بنية عدم الثقة' },
               url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/zero-trust-sy0-701/',
-              embedId: 'inWWhr5tnEA',
+              embedId: 'zC_Pndpg8-c',
               duration: '14:10'
             }
           ],
@@ -63,7 +57,7 @@ export const certifications = [
               url: 'https://www.comptia.org/training/resources/exam-objectives'
             },
             {
-              title: { en: 'Professor Messer Free SY0-701 Course Index & Notes', ar: 'مهرجان بروفيسور ميسر وملاحظات دورة SY0-701' },
+              title: { en: 'Professor Messer Free SY0-701 Course Index & Notes', ar: 'فهرس بروفيسور ميسر وملاحظات دورة SY0-701' },
               url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/'
             }
           ],
@@ -98,20 +92,8 @@ export const certifications = [
             {
               title: { en: 'Professor Messer: 2.1 Threat Actors & Motivations - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٢.١ الجهات المهددة والدوافع' },
               url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/threat-actors-sy0-701/',
-              embedId: 'Y7zNlEMDmI4',
+              embedId: '6xUH0t6ugIM',
               duration: '15:40'
-            },
-            {
-              title: { en: 'Professor Messer: 2.2 Social Engineering & Phishing Attacks', ar: 'بروفيسور ميسر: ٢.٢ الهندسة الاجتماعية والتصيد' },
-              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/social-engineering-sy0-701/',
-              embedId: 'Y7zNlEMDmI4',
-              duration: '22:15'
-            },
-            {
-              title: { en: 'Professor Messer: 2.3 Types of Malware & Malicious Software', ar: 'بروفيسور ميسر: ٢.٣ أنواع البرمجيات الخبيثة' },
-              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/types-of-malware-sy0-701/',
-              embedId: 'Y7zNlEMDmI4',
-              duration: '19:30'
             }
           ],
           pdfs: [
@@ -149,10 +131,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: 3.2 Cloud Security Concepts - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٣.٢ مفاهيم أمن السحابة' },
-              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/cloud-security-concepts-sy0-701/',
+              title: { en: 'AWS Official: What is Cloud Computing & Architecture Essentials', ar: 'رسمي من AWS: مفاهيم وبنية الحوسبة السحابية' },
+              url: 'https://www.youtube.com/watch?v=mxT233EdY5c',
               embedId: 'mxT233EdY5c',
-              duration: '17:45'
+              duration: '11:15'
             }
           ],
           pdfs: [
@@ -190,21 +172,21 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: 4.1 Security Monitoring & SIEM Analysis', ar: 'بروفيسور ميسر: ٤.١ المراقبة الأمنية وتحليل SIEM' },
+              title: { en: 'Professor Messer: 4.1 Security Monitoring - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٤.١ المراقبة الأمنية' },
               url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/security-monitoring-sy0-701/',
-              embedId: 'inWWhr5tnEA',
+              embedId: 'np2WI_rM-Ok',
               duration: '21:10'
             },
             {
-              title: { en: 'Professor Messer: 4.2 Incident Response Process Steps', ar: 'بروفيسور ميسر: ٤.٢ خطوات عملية الاستجابة للحوادث' },
+              title: { en: 'Professor Messer: 4.2 Incident Response Process - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٤.٢ عملية الاستجابة للحوادث' },
               url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/incident-response-sy0-701/',
-              embedId: 'inWWhr5tnEA',
+              embedId: 'X2UiMLxRdhE',
               duration: '18:40'
             },
             {
-              title: { en: 'Professor Messer: 4.3 Digital Forensics Concepts', ar: 'بروفيسور ميسر: ٤.٣ مفاهيم الطب الشرعي الرقمي' },
+              title: { en: 'Professor Messer: 4.3 Digital Forensics Concepts - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٤.٣ مفاهيم الطب الشرعي الرقمي' },
               url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/digital-forensics-sy0-701/',
-              embedId: 'inWWhr5tnEA',
+              embedId: 'UtDWApdO8Zk',
               duration: '15:20'
             }
           ],
@@ -245,7 +227,7 @@ export const certifications = [
             {
               title: { en: 'Professor Messer: 5.2 Risk Management Processes - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٥.٢ عمليات إدارة المخاطر' },
               url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/risk-management-sy0-701/',
-              embedId: 'inWWhr5tnEA',
+              embedId: 'cLhUMoQS1a8',
               duration: '22:15'
             }
           ],
@@ -266,14 +248,14 @@ export const certifications = [
     ],
     examTips: {
       en: [
-        'Follow Professor Messer\'s sub-section videos (1.1, 1.2, 2.1, 4.1) for structured domain learning',
+        'Follow Professor Messer\'s exact sub-section videos (1.1, 1.3, 2.1, 4.1, 4.2, 5.2) for domain-by-domain learning',
         'Focus heavily on understanding concepts instead of blind memorization',
         'Practice with Performance-Based Questions (PBQs) — skip them during the exam and solve them at the end',
         'Take at least 3 full-length practice exams on ExamCompass before booking your official exam',
         'Know key port numbers (SSH 22, HTTPS 443, DNS 53, RDP 3389) by heart'
       ],
       ar: [
-        'اتبع فيديوهات Professor Messer المقسمة حسب الفصول (1.1, 1.2, 2.1) للدراسة المنظمة',
+        'اتبع فيديوهات Professor Messer الرسمية لكل فصل (1.1, 1.3, 2.1, 4.1, 4.2, 5.2) للدراسة المنظمة',
         'ركز بشدة على فهم المفاهيم بدلاً من الحفظ المجرد',
         'تدرب على أسئلة الأداء العملي (PBQs) — تخطّها أثناء الامتحان وحلها في النهاية',
         'أجرِ ٣ اختبارات تجريبية كاملة على ExamCompass قبل حجز موعد الامتحان',

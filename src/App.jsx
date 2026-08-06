@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { AuthProvider } from './context/AuthContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { ProgressProvider } from './context/ProgressContext';
 import { PurchaseProvider } from './context/PurchaseContext';
@@ -46,13 +47,16 @@ function AppContent() {
 export default function App() {
   return (
     <Router>
-      <LanguageProvider>
-        <ProgressProvider>
-          <PurchaseProvider>
-            <AppContent />
-          </PurchaseProvider>
-        </ProgressProvider>
-      </LanguageProvider>
+      <AuthProvider>
+        <LanguageProvider>
+          <ProgressProvider>
+            <PurchaseProvider>
+              <AppContent />
+            </PurchaseProvider>
+          </ProgressProvider>
+        </LanguageProvider>
+      </AuthProvider>
     </Router>
   );
 }
+

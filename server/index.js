@@ -4,6 +4,12 @@ import cors from 'cors';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { connectDB } from './db.js';
+import User from './models/User.js';
+import Order from './models/Order.js';
+import authRoutes from './routes/auth.js';
+import progressRoutes from './routes/progress.js';
+import userRoutes from './routes/users.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -26,10 +32,19 @@ const VARIANTS = {
 app.use(express.json());
 app.use(cors({ origin: CLIENT_URL }));
 
+// ─── Connect to MongoDB ───
+await connectDB();
+
+// ─── Mount API Routes ───
+app.use('/api/auth', authRoutes);
+app.use('/api/progress', progressRoutes);
+app.use('/api/users', userRoutes);
+
 // ─── Health Check ───
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
+    db: 'connected',
     gateway: 'Lemon Squeezy (Merchant of Record - No CR Required 🚀)',
     timestamp: new Date().toISOString()
   });
@@ -119,7 +134,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
 });
 
 // ─── Lemon Squeezy Webhook Endpoint ───
-app.post('/api/webhook', (req, res) => {
+app.post('/api/webhook', async (req, res) => {
   try {
     const rawBody = JSON.stringify(req.body);
     const hmac = crypto.createHmac('sha256', LEMON_WEBHOOK_SECRET || '');
@@ -136,9 +151,54 @@ app.post('/api/webhook', (req, res) => {
 
     if (eventName === 'order_created') {
       const order = event.data?.attributes;
+      const customData = event.meta?.custom_data || {};
+      const customerEmail = order?.user_email;
+
       console.log('✅ Order successful:', order?.identifier);
-      console.log('   Customer:', order?.user_email);
+      console.log('   Customer:', customerEmail);
       console.log('   Total:', order?.total_formatted);
+
+      // Save order to database
+      const priceType = customData.price_type || 'pro_monthly';
+      const certId = customData.cert_id || null;
+
+      try {
+        await Order.create({
+          orderId: order?.identifier || `ls_${Date.now()}`,
+          email: customerEmail,
+          priceType,
+          certId: certId !== 'none' ? certId : null,
+          certName: customData.cert_name || null,
+          amount: order?.total_formatted || null,
+          status: 'completed',
+          provider: 'lemonsqueezy'
+        });
+        console.log('   📦 Order saved to database');
+      } catch (orderErr) {
+        console.error('   ⚠️ Failed to save order:', orderErr.message);
+      }
+
+      // Update user's purchase status if they have an account
+      if (customerEmail) {
+        try {
+          const user = await User.findOne({ email: customerEmail.toLowerCase() });
+          if (user) {
+            if (priceType === 'pro_monthly' || priceType === 'pro_yearly') {
+              user.isPro = true;
+            } else if (priceType === 'course' && certId && certId !== 'none') {
+              if (!user.unlockedCourses.includes(certId)) {
+                user.unlockedCourses.push(certId);
+              }
+            }
+            await user.save();
+            console.log('   👤 User purchase status updated');
+          } else {
+            console.log('   ℹ️ No registered user found for this email — order saved for later');
+          }
+        } catch (userErr) {
+          console.error('   ⚠️ Failed to update user:', userErr.message);
+        }
+      }
     }
 
     res.json({ status: 'success' });
@@ -161,7 +221,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, () => {
-  console.log(`\n🚀 CoursePath API server running on port ${PORT}`);
+  console.log(`\n🚀 CertPath API server running on port ${PORT}`);
+  console.log(`   Database: MongoDB Atlas ✅`);
   console.log(`   Gateway: Lemon Squeezy (Merchant of Record - No CR Needed!)`);
   console.log(`   Supports: Apple Pay + Google Pay + All Credit/Debit Cards`);
   console.log(`   Client URL: ${CLIENT_URL}\n`);

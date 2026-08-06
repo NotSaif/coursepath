@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { certifications } from '../data/certifications';
+import { useAuth } from './AuthContext';
 
 const ProgressContext = createContext();
 
-const STORAGE_KEY = 'coursepath_progress';
+const STORAGE_KEY = 'certpath_progress';
 
-function loadProgress() {
+function loadLocalProgress() {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
     return data ? JSON.parse(data) : {};
@@ -14,7 +15,7 @@ function loadProgress() {
   }
 }
 
-function saveProgress(progress) {
+function saveLocalProgress(progress) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   } catch (e) {
@@ -23,13 +24,56 @@ function saveProgress(progress) {
 }
 
 export function ProgressProvider({ children }) {
-  const [progress, setProgress] = useState(loadProgress);
+  const { isAuthenticated, authFetch } = useAuth();
+  const [progress, setProgress] = useState(loadLocalProgress);
+  const [synced, setSynced] = useState(false);
 
+  // Save to localStorage as fallback
   useEffect(() => {
-    saveProgress(progress);
+    saveLocalProgress(progress);
   }, [progress]);
 
-  const toggleChapter = useCallback((certId, chapterId) => {
+  // When user logs in: sync localStorage progress to server, then load server progress
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setSynced(false);
+      return;
+    }
+
+    const syncProgress = async () => {
+      try {
+        // If there's local progress and we haven't synced yet, push it to the server
+        const localProgress = loadLocalProgress();
+        const hasLocalProgress = Object.keys(localProgress).some(certId => {
+          const chapters = localProgress[certId];
+          return chapters && Object.values(chapters).some(v => v);
+        });
+
+        if (hasLocalProgress && !synced) {
+          await authFetch('/api/progress/sync', {
+            method: 'POST',
+            body: JSON.stringify({ progress: localProgress }),
+          });
+        }
+
+        // Fetch the authoritative progress from server
+        const res = await authFetch('/api/progress');
+        if (res.ok) {
+          const serverProgress = await res.json();
+          setProgress(serverProgress);
+          setSynced(true);
+        }
+      } catch (err) {
+        console.error('Failed to sync progress:', err.message);
+        // Fall back to local progress silently
+      }
+    };
+
+    syncProgress();
+  }, [isAuthenticated, authFetch, synced]);
+
+  const toggleChapter = useCallback(async (certId, chapterId) => {
+    // Optimistic update locally
     setProgress(prev => {
       const certProgress = prev[certId] || {};
       const isCompleted = certProgress[chapterId];
@@ -41,7 +85,27 @@ export function ProgressProvider({ children }) {
         }
       };
     });
-  }, []);
+
+    // If authenticated, also update on the server
+    if (isAuthenticated) {
+      try {
+        const res = await authFetch(`/api/progress/${certId}/${chapterId}`, {
+          method: 'PUT',
+        });
+        if (res.ok) {
+          const { certId: returnedCertId, chapters } = await res.json();
+          // Update with server's response (source of truth)
+          setProgress(prev => ({
+            ...prev,
+            [returnedCertId]: chapters
+          }));
+        }
+      } catch (err) {
+        console.error('Failed to sync chapter toggle:', err.message);
+        // Keep the optimistic update — it's already saved in localStorage
+      }
+    }
+  }, [isAuthenticated, authFetch]);
 
   const isChapterCompleted = useCallback((certId, chapterId) => {
     return !!progress[certId]?.[chapterId];

@@ -291,5 +291,25 @@
     "previous": "السابق",
     "viewMore": "عرض المزيد",
     "learnMore": "اعرف المزيد"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "loginDesc": "مرحباً بعودتك! سجّل دخولك لمزامنة تقدمك عبر الأجهزة.",
+    "registerDesc": "أنشئ حساباً لحفظ تقدمك وفتح جميع الميزات.",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "namePlaceholder": "أدخل اسمك",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "loginBtn": "تسجيل الدخول",
+    "registerBtn": "إنشاء حساب",
+    "loading": "يرجى الانتظار...",
+    "noAccount": "ليس لديك حساب؟",
+    "hasAccount": "لديك حساب بالفعل؟",
+    "registerLink": "إنشاء حساب",
+    "loginLink": "تسجيل الدخول",
+    "logout": "تسجيل الخروج"
   }
 }

@@ -291,5 +291,25 @@
     "previous": "Previous",
     "viewMore": "View More",
     "learnMore": "Learn More"
+  },
+  "auth": {
+    "login": "Log In",
+    "register": "Sign Up",
+    "loginDesc": "Welcome back! Sign in to sync your progress across devices.",
+    "registerDesc": "Create an account to save your progress and unlock all features.",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "loginBtn": "Sign In",
+    "registerBtn": "Create Account",
+    "loading": "Please wait...",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "registerLink": "Sign Up",
+    "loginLink": "Sign In",
+    "logout": "Log Out"
   }
 }

@@ -1,10 +1,11 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { useAuth } from './AuthContext';
 
 const PurchaseContext = createContext();
 
 const STORAGE_KEY = 'coursepath_purchases';
 
-function loadPurchases() {
+function loadLocalPurchases() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) return JSON.parse(saved);
@@ -15,49 +16,72 @@ function loadPurchases() {
 }
 
 export function PurchaseProvider({ children }) {
-  const [purchases, setPurchases] = useState(loadPurchases);
+  const { isAuthenticated, user, updateUser } = useAuth();
+  const [localPurchases, setLocalPurchases] = useState(loadLocalPurchases);
 
+  // Save local purchases to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(purchases));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(localPurchases));
     } catch (e) {
       console.error('Failed to save purchases:', e);
     }
-  }, [purchases]);
+  }, [localPurchases]);
+
+  // When authenticated, use the user's purchase data from the server
+  const isPro = isAuthenticated ? (user?.isPro || false) : localPurchases.isPro;
+  const unlockedCourses = isAuthenticated
+    ? (user?.unlockedCourses || [])
+    : localPurchases.unlockedCourses;
 
   // Unlock a specific course
   const unlockCourse = (certId) => {
     if (!certId) return;
-    setPurchases(prev => {
-      if (prev.unlockedCourses.includes(certId)) return prev;
-      return {
-        ...prev,
-        unlockedCourses: [...prev.unlockedCourses, certId]
-      };
-    });
+    if (isAuthenticated) {
+      // Update user state (server will be updated by webhook)
+      const currentCourses = user?.unlockedCourses || [];
+      if (!currentCourses.includes(certId)) {
+        updateUser({ unlockedCourses: [...currentCourses, certId] });
+      }
+    } else {
+      setLocalPurchases(prev => {
+        if (prev.unlockedCourses.includes(certId)) return prev;
+        return {
+          ...prev,
+          unlockedCourses: [...prev.unlockedCourses, certId]
+        };
+      });
+    }
   };
 
   // Unlock Pro subscription (all courses)
   const unlockPro = () => {
-    setPurchases(prev => ({ ...prev, isPro: true }));
+    if (isAuthenticated) {
+      updateUser({ isPro: true });
+    } else {
+      setLocalPurchases(prev => ({ ...prev, isPro: true }));
+    }
   };
 
   // Check if a specific cert is unlocked
   const isCertUnlocked = (certId) => {
-    if (purchases.isPro) return true;
-    return purchases.unlockedCourses.includes(certId);
+    if (isPro) return true;
+    return unlockedCourses.includes(certId);
   };
 
   // Reset for testing
   const resetPurchases = () => {
-    setPurchases({ isPro: false, unlockedCourses: [] });
+    setLocalPurchases({ isPro: false, unlockedCourses: [] });
+    if (isAuthenticated) {
+      updateUser({ isPro: false, unlockedCourses: [] });
+    }
   };
 
   return (
     <PurchaseContext.Provider
       value={{
-        isPro: purchases.isPro,
-        unlockedCourses: purchases.unlockedCourses,
+        isPro,
+        unlockedCourses,
         unlockCourse,
         unlockPro,
         isCertUnlocked,

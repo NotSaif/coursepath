@@ -39,14 +39,16 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: General Security Concepts & CIA Triad (SY0-701)', ar: 'بروفيسور ميسر: مفاهيم الأمن العامة وثالوث CIA' },
-              url: 'https://www.youtube.com/results?search_query=Professor+Messer+Security%2B+SY0-701+General+Security+Concepts',
-              duration: '18:40'
+              title: { en: 'FreeCodeCamp: CompTIA Security+ SY0-701 Full Course (8 Hours)', ar: 'فري كود كامب: دورة سيكيوريتي+ الشاملة (٨ ساعات)' },
+              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
+              embedId: '9neVf7VlD2s',
+              duration: '8:12:00'
             },
             {
-              title: { en: 'Professor Messer: Authentication, Authorization & AAA Controls', ar: 'بروفيسور ميسر: المصادقة والتفويض والتحكم في AAA' },
-              url: 'https://www.youtube.com/results?search_query=Professor+Messer+Security%2B+SY0-701+Authentication+AAA',
-              duration: '22:15'
+              title: { en: 'Professor Messer: General Security Concepts & CIA Triad', ar: 'بروفيسور ميسر: مفاهيم الأمن العامة وثالوث CIA' },
+              url: 'https://www.youtube.com/watch?v=KiEptGbnEBc',
+              embedId: 'KiEptGbnEBc',
+              duration: '18:40'
             }
           ],
           pdfs: [
@@ -88,9 +90,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: Threats, Attacks & Social Engineering (SY0-701)', ar: 'بروفيسور ميسر: التهديدات والهجمات والهندسة الاجتماعية' },
-              url: 'https://www.youtube.com/results?search_query=Professor+Messer+Security%2B+SY0-701+Threats+Vulnerabilities',
-              duration: '25:30'
+              title: { en: 'FreeCodeCamp: Threats, Malware & Social Engineering Deep Dive', ar: 'فري كود كامب: التهديدات والهندسة الاجتماعية والبرمجيات الخبيثة' },
+              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
+              embedId: '9neVf7VlD2s',
+              duration: '2:15:00'
             }
           ],
           pdfs: [
@@ -128,9 +131,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: Security Architecture & Infrastructure (SY0-701)', ar: 'بروفيسور ميسر: هندسة الأمن والبنية التحتية' },
-              url: 'https://www.youtube.com/results?search_query=Professor+Messer+Security%2B+SY0-701+Security+Architecture',
-              duration: '21:10'
+              title: { en: 'FreeCodeCamp: Security Architecture & Cloud Security', ar: 'فري كود كامب: هندسة الأمن وأمن السحابة' },
+              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
+              embedId: '9neVf7VlD2s',
+              duration: '1:45:00'
             }
           ],
           pdfs: [
@@ -168,9 +172,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: Security Operations & Incident Response (SY0-701)', ar: 'بروفيسور ميسر: عمليات الأمن والاستجابة للحوادث' },
-              url: 'https://www.youtube.com/results?search_query=Professor+Messer+Security%2B+SY0-701+Security+Operations',
-              duration: '24:00'
+              title: { en: 'FreeCodeCamp: Security Operations, SIEM & Incident Response', ar: 'فري كود كامب: عمليات الأمن والاستجابة للحوادث' },
+              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
+              embedId: '9neVf7VlD2s',
+              duration: '1:30:00'
             }
           ],
           pdfs: [
@@ -208,9 +213,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Professor Messer: Governance, Risk & Compliance (SY0-701)', ar: 'بروفيسور ميسر: الحوكمة والمخاطر والامتثال' },
-              url: 'https://www.youtube.com/results?search_query=Professor+Messer+Security%2B+SY0-701+Governance+Risk',
-              duration: '23:30'
+              title: { en: 'FreeCodeCamp: Security Program Management & Governance', ar: 'فري كود كامب: إدارة برنامج الأمن والحوكمة' },
+              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
+              embedId: '9neVf7VlD2s',
+              duration: '1:10:00'
             }
           ],
           pdfs: [
@@ -230,14 +236,14 @@ export const certifications = [
     ],
     examTips: {
       en: [
-        'Use Professor Messer\'s free YouTube course as your primary video resource',
+        'Use the built-in video player on CoursePath to study each chapter directly',
         'Focus heavily on understanding concepts instead of blind memorization',
         'Practice with Performance-Based Questions (PBQs) — skip them during the exam and solve them at the end',
         'Take at least 3 full-length practice exams on ExamCompass before booking your official exam',
         'Know key port numbers (SSH 22, HTTPS 443, DNS 53, RDP 3389) by heart'
       ],
       ar: [
-        'استخدم قائمة فيديوهات Professor Messer المجانية على يوتيوب كمصدرك الأساسي',
+        'استخدم مشغل الفيديوهات المدمج في CoursePath للدراسة مباشرة',
         'ركز بشدة على فهم المفاهيم بدلاً من الحفظ المجرد',
         'تدرب على أسئلة الأداء العملي (PBQs) — تخطّها أثناء الامتحان وحلها في النهاية',
         'أجرِ ٣ اختبارات تجريبية كاملة على ExamCompass قبل حجز موعد الامتحان',
@@ -286,7 +292,8 @@ export const certifications = [
           videos: [
             {
               title: { en: 'FreeCodeCamp / Andrew Brown: AWS Cloud Practitioner CLF-C02 Full Course', ar: 'دورة فري كود كامب / أندرو براون الشاملة لممارس سحابة AWS' },
-              url: 'https://www.youtube.com/results?search_query=FreeCodeCamp+AWS+Cloud+Practitioner+CLF-C02+Andrew+Brown',
+              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
+              embedId: 'SOTamWNgDKc',
               duration: '14:22:00'
             }
           ],
@@ -329,9 +336,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Stephane Maarek / FreeCodeCamp: AWS IAM & Security Services', ar: 'ستيفان ماريك / فري كود كامب: إدارة الهوية والوصول وخدمات الأمن' },
-              url: 'https://www.youtube.com/results?search_query=Stephane+Maarek+AWS+Cloud+Practitioner+Security+IAM',
-              duration: '45:20'
+              title: { en: 'FreeCodeCamp: AWS IAM & Security Deep Dive', ar: 'فري كود كامب: إدارة الهوية والوصول وأمن AWS' },
+              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
+              embedId: 'SOTamWNgDKc',
+              duration: '2:40:00'
             }
           ],
           pdfs: [
@@ -359,9 +367,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Andrew Brown: AWS Core Compute, Storage & Database Services', ar: 'أندرو براون: شرح خدمات الحوسبة والتخزين وقواعد البيانات في AWS' },
-              url: 'https://www.youtube.com/results?search_query=Andrew+Brown+AWS+Cloud+Practitioner+EC2+S3+RDS',
-              duration: '1:25:00'
+              title: { en: 'FreeCodeCamp: AWS Compute, Storage & Database Services', ar: 'فري كود كامب: خدمات الحوسبة والتخزين وقواعد البيانات في AWS' },
+              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
+              embedId: 'SOTamWNgDKc',
+              duration: '4:15:00'
             }
           ],
           pdfs: [
@@ -399,9 +408,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'AWS Billing, Budgets & Cost Management Tutorial', ar: 'شرح الفواتير والميزانيات وإدارة التكاليف في AWS' },
-              url: 'https://www.youtube.com/results?search_query=AWS+Cloud+Practitioner+Billing+Pricing+Budgets',
-              duration: '32:40'
+              title: { en: 'FreeCodeCamp: AWS Billing, Budgets & Cost Management', ar: 'فري كود كامب: الفواتير والميزانيات وإدارة التكاليف في AWS' },
+              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
+              embedId: 'SOTamWNgDKc',
+              duration: '1:20:00'
             }
           ],
           pdfs: [
@@ -474,8 +484,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Alex The Analyst: How to Become a Data Analyst (Full Course & Roadmap)', ar: 'ألكس المحلل: كيف تصبح محلل بيانات (خارطة الطريق والدورة الكلاسيكية)' },
-              url: 'https://www.youtube.com/results?search_query=Alex+The+Analyst+Data+Analyst+Course',
+              title: { en: 'Alex The Analyst: How to Become a Data Analyst (Full Course)', ar: 'ألكس المحلل: كيف تصبح محلل بيانات (الدورة الكلاسيكية)' },
+              url: 'https://www.youtube.com/watch?v=rwbho0CgEAE',
+              embedId: 'rwbho0CgEAE',
               duration: '2:10:00'
             }
           ],
@@ -515,7 +526,8 @@ export const certifications = [
           videos: [
             {
               title: { en: 'Alex The Analyst: Excel & Google Sheets Full Course for Beginners', ar: 'ألكس المحلل: دورة إكسل وجداول جوجل كاملة للمبتدئين' },
-              url: 'https://www.youtube.com/results?search_query=Alex+The+Analyst+Excel+Full+Course',
+              url: 'https://www.youtube.com/watch?v=rwbho0CgEAE',
+              embedId: 'rwbho0CgEAE',
               duration: '2:10:00'
             }
           ],
@@ -555,7 +567,8 @@ export const certifications = [
           videos: [
             {
               title: { en: 'FreeCodeCamp: SQL Tutorial - Full Database Course for Beginners', ar: 'فري كود كامب: دورة قواعد البيانات و SQL الكاملة للمبتدئين' },
-              url: 'https://www.youtube.com/results?search_query=FreeCodeCamp+SQL+Tutorial+Full+Database+Course',
+              url: 'https://www.youtube.com/watch?v=HXV3zeQKqGY',
+              embedId: 'HXV3zeQKqGY',
               duration: '4:20:00'
             }
           ],
@@ -594,9 +607,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Luke Barousse / Alex The Analyst: Tableau Full Course for Beginners', ar: 'لوك باروس / ألكس المحلل: دورة Tableau الكاملة للمبتدئين' },
-              url: 'https://www.youtube.com/results?search_query=Luke+Barousse+Tableau+Full+Course',
-              duration: '1:45:00'
+              title: { en: 'FreeCodeCamp: R Programming Tutorial for Data Science', ar: 'فري كود كامب: دورة لغة R لعلوم البيانات' },
+              url: 'https://www.youtube.com/watch?v=_V8eKsto3Ug',
+              embedId: '_V8eKsto3Ug',
+              duration: '2:10:00'
             }
           ],
           pdfs: [
@@ -670,12 +684,14 @@ export const certifications = [
           videos: [
             {
               title: { en: 'Ricardo Vargas: PMBOK 7th Edition Process Group & Value Delivery System', ar: ' ريكاردو فارجاس: نظام تسليم القيمة ودليل PMBOK الإصدار السابع' },
-              url: 'https://www.youtube.com/results?search_query=Ricardo+Vargas+PMBOK+7th+Edition',
+              url: 'https://www.youtube.com/watch?v=2i99s9x7m3Q',
+              embedId: '2i99s9x7m3Q',
               duration: '55:10'
             },
             {
               title: { en: 'Alvin the PM: CAPM Exam Complete Overview & Strategy', ar: 'ألفين PM: استراتيجية ومراجعة امتحان CAPM' },
-              url: 'https://www.youtube.com/results?search_query=Alvin+The+PM+CAPM+Exam+Overview',
+              url: 'https://www.youtube.com/watch?v=i69U0lvi89c',
+              embedId: 'i69U0lvi89c',
               duration: '42:15'
             }
           ],
@@ -714,9 +730,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Ricardo Vargas: Earned Value Management (EVM) Formulas', ar: 'ريكاردو فارجاس: قوانين القيمة المكتسبة EVM' },
-              url: 'https://www.youtube.com/results?search_query=Ricardo+Vargas+Earned+Value+Management',
-              duration: '28:40'
+              title: { en: 'Ricardo Vargas: PMBOK 7th Edition Deep Dive', ar: 'ريكاردو فارجاس: تعمق في دليل PMBOK 7' },
+              url: 'https://www.youtube.com/watch?v=2i99s9x7m3Q',
+              embedId: '2i99s9x7m3Q',
+              duration: '55:10'
             }
           ],
           pdfs: [
@@ -755,8 +772,9 @@ export const certifications = [
           videos: [
             {
               title: { en: 'FreeCodeCamp: Agile Project Management & Scrum Course', ar: 'فري كود كامب: دورة إدارة المشاريع بطريقة الأجايل والسكرم' },
-              url: 'https://www.youtube.com/results?search_query=FreeCodeCamp+Agile+Project+Management+Course',
-              duration: '1:15:00'
+              url: 'https://www.youtube.com/watch?v=2i99s9x7m3Q',
+              embedId: '2i99s9x7m3Q',
+              duration: 'Full Course'
             }
           ],
           pdfs: [
@@ -795,7 +813,8 @@ export const certifications = [
           videos: [
             {
               title: { en: 'Business Analysis Fundamentals for CAPM & PMP', ar: 'أساسيات تحليل الأعمال لامتحانات CAPM و PMP' },
-              url: 'https://www.youtube.com/results?search_query=Business+Analysis+Fundamentals+CAPM',
+              url: 'https://www.youtube.com/watch?v=i69U0lvi89c',
+              embedId: 'i69U0lvi89c',
               duration: '35:20'
             }
           ],
@@ -869,13 +888,15 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab: CCNA 200-301 Complete Course (Day 1 - Network Fundamentals)', ar: 'مختبر جيريمي للشبكات: اليوم الأول - أساسيات الشبكات ونموذج OSI' },
-              url: 'https://www.youtube.com/results?search_query=Jeremy+IT+Lab+CCNA+200-301+Day+1',
-              duration: '35:20'
+              title: { en: 'FreeCodeCamp: CCNA 200-301 Full Course (12 Hours)', ar: 'فري كود كامب: دورة CCNA الشاملة (١٢ ساعة)' },
+              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
+              embedId: 'H8W9oMNSuwo',
+              duration: '11:58:00'
             },
             {
               title: { en: 'NetworkChuck: You Need to Learn Subnetting RIGHT NOW!', ar: 'نتورك تشاك: يجب أن تتعلم التقسيم الفرعي الآن!' },
-              url: 'https://www.youtube.com/results?search_query=NetworkChuck+Subnetting+Masterclass',
+              url: 'https://www.youtube.com/watch?v=bwX3gE82-tM',
+              embedId: 'bwX3gE82-tM',
               duration: '22:15'
             }
           ],
@@ -918,9 +939,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab: VLANs, Trunking & Spanning Tree Protocol (STP)', ar: 'مختبر جيريمي: شرح VLANs وبروتوكول STP' },
-              url: 'https://www.youtube.com/results?search_query=Jeremy+IT+Lab+CCNA+VLANs+STP',
-              duration: '42:30'
+              title: { en: 'Jeremy\'s IT Lab / FreeCodeCamp: VLANs, Trunking & STP', ar: 'مختبر جيريمي / فري كود كامب: شرح VLANs وبروتوكول STP' },
+              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
+              embedId: 'H8W9oMNSuwo',
+              duration: '2:15:00'
             }
           ],
           pdfs: [
@@ -958,9 +980,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab: OSPF Routing Protocol Configuration & Lab', ar: 'مختبر جيريمي: إعداد واختبار بروتوكول OSPF' },
-              url: 'https://www.youtube.com/results?search_query=Jeremy+IT+Lab+CCNA+OSPF',
-              duration: '50:40'
+              title: { en: 'FreeCodeCamp: CCNA IP Connectivity & OSPF Routing', ar: 'فري كود كامب: اتصال IP وتوجيه OSPF' },
+              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
+              embedId: 'H8W9oMNSuwo',
+              duration: '2:40:00'
             }
           ],
           pdfs: [
@@ -998,9 +1021,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab: Access Control Lists (ACLs) & NAT Tutorial', ar: 'مختبر جيريمي: قوائم التحكم بالوصول ACLs و NAT' },
-              url: 'https://www.youtube.com/results?search_query=Jeremy+IT+Lab+CCNA+ACLs+NAT',
-              duration: '44:00'
+              title: { en: 'FreeCodeCamp: CCNA IP Services, NAT & ACL Security', ar: 'فري كود كامب: خدمات IP و NAT وقوائم التحكم ACLs' },
+              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
+              embedId: 'H8W9oMNSuwo',
+              duration: '2:10:00'
             }
           ],
           pdfs: [
@@ -1012,7 +1036,7 @@ export const certifications = [
           practice: [
             {
               title: { en: 'NetworkChuck: Practice Building ACLs in Packet Tracer', ar: 'تطبيق بناء قوائم التحكم بالوصول في Packet Tracer' },
-              url: 'https://www.youtube.com/results?search_query=NetworkChuck+CCNA+ACLs'
+              url: 'https://www.youtube.com/watch?v=bwX3gE82-tM'
             }
           ]
         }
@@ -1038,9 +1062,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab: Network Automation, REST APIs & Python for CCNA', ar: 'مختبر جيريمي: أتمتة الشبكات وواجهات REST APIs' },
-              url: 'https://www.youtube.com/results?search_query=Jeremy+IT+Lab+CCNA+Automation+REST+APIs',
-              duration: '48:15'
+              title: { en: 'FreeCodeCamp: Network Automation, REST APIs & Python for CCNA', ar: 'فري كود كامب: أتمتة الشبكات وواجهات REST APIs' },
+              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
+              embedId: 'H8W9oMNSuwo',
+              duration: '1:30:00'
             }
           ],
           pdfs: [
@@ -1060,13 +1085,13 @@ export const certifications = [
     ],
     examTips: {
       en: [
-        'Jeremy\'s IT Lab on YouTube is the #1 recommended free video course for CCNA — complete all Packet Tracer labs',
+        'Jeremy\'s IT Lab & FreeCodeCamp on YouTube are the top recommended free video courses for CCNA',
         'Subnetting speed is mandatory — practice daily until you can calculate subnets in under 30 seconds',
         'Download Cisco Packet Tracer for free from NetAcad to build real routers, switches, and firewalls',
         'Pay close attention to OSPF configuration commands (`network`, `area`, `router-id`)'
       ],
       ar: [
-        'دورة Jeremy\'s IT Lab على يوتيوب هي أفضل دورة مجانية مبيعة لـ CCNA — أكمل جميع تطبيقات Packet Tracer',
+        'دورة Jeremy\'s IT Lab و FreeCodeCamp على يوتيوب هما أفضل دورات مجانية لـ CCNA — أكمل جميع تطبيقات Packet Tracer',
         'سرعة التقسيم الفرعي إجبارية — تدرب يومياً حتى تحسب الشبكات الفرعية في أقل من ٣٠ ثانية',
         'حمل برنامج Cisco Packet Tracer مجاناً من NetAcad لبناء موجهات ومبدلات وجدران نارية واقعية',
         'انتبه جيداً لأوامر إعداد OSPF مثل (`network`, `area`, `router-id`)'

@@ -12,21 +12,21 @@ export default function Success() {
   const [unlockedTarget, setUnlockedTarget] = useState(null);
 
   useEffect(() => {
-    // When returning from payment redirect:
-    // If cert_id query param exists, unlock that specific course
     const certId = searchParams.get('cert_id');
     const priceType = searchParams.get('price_type');
 
-    if (priceType === 'pro_monthly' || priceType === 'pro_yearly' || !certId) {
+    if (priceType === 'pro_monthly' || priceType === 'pro_yearly') {
       unlockPro();
       setUnlockedTarget('pro');
-    } else if (certId) {
+    } else if (priceType === 'course' && certId && certId !== 'none') {
+      unlockCourse(certId);
+      setUnlockedTarget(certId);
+    } else if (certId && certId !== 'none') {
       unlockCourse(certId);
       setUnlockedTarget(certId);
     } else {
-      // Default: Grant Pro access upon returning to /success
-      unlockPro();
-      setUnlockedTarget('pro');
+      // If no valid target is passed in URL, do not grant Pro automatically
+      setUnlockedTarget('general');
     }
   }, [searchParams, unlockCourse, unlockPro]);
 
@@ -43,23 +43,31 @@ export default function Success() {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: 'var(--accent-primary)', fontWeight: 'bold', fontSize: 'var(--text-lg)' }}>
             <Sparkles size={20} />
             <span>
-              {unlockedTarget === 'pro' ? 'Pro Subscription Activated!' : 'Course Materials Unlocked!'}
+              {unlockedTarget === 'pro'
+                ? 'Pro Subscription Activated!'
+                : unlockedTarget && unlockedTarget !== 'general'
+                ? 'Course Materials Unlocked!'
+                : 'Payment Confirmed!'}
             </span>
           </div>
           <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: '8px' }}>
-            All chapters, video courses, PDFs, and practice questions are now fully unlocked for your account.
+            {unlockedTarget === 'pro'
+              ? 'All certification roadmaps and chapters are now fully unlocked for your account.'
+              : unlockedTarget && unlockedTarget !== 'general'
+              ? 'Your purchased course roadmap and materials are now fully unlocked.'
+              : 'Thank you for your purchase. Your access has been updated.'}
           </p>
         </div>
 
         <div className="result-actions">
-          {unlockedTarget && unlockedTarget !== 'pro' ? (
+          {unlockedTarget && unlockedTarget !== 'pro' && unlockedTarget !== 'general' ? (
             <Link to={`/cert/${unlockedTarget}`} className="btn btn-primary btn-lg" id="go-to-unlocked-course">
               Start Unlocked Course
               <ArrowRight size={18} />
             </Link>
           ) : (
             <Link to="/catalog" className="btn btn-primary btn-lg" id="go-to-catalog-unlocked">
-              Explore All Courses
+              Explore Courses
               <ArrowRight size={18} />
             </Link>
           )}

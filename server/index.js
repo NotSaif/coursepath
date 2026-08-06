@@ -90,7 +90,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
               }
             },
             product_options: {
-              redirect_url: `${CLIENT_URL}/success`
+              redirect_url: `${CLIENT_URL}/success?cert_id=${encodeURIComponent(certId || '')}&price_type=${encodeURIComponent(priceType || '')}`
             }
           },
           relationships: {

@@ -24,31 +24,47 @@ export const certifications = [
         estimatedHours: 8,
         objectives: {
           en: [
-            'Compare and contrast key security concepts (CIA Triad: Confidentiality, Integrity, Availability)',
-            'Authentication, Authorization, and Accounting (AAA)',
-            'Zero Trust Architecture principles and Gap Analysis',
-            'Cryptographic concepts (Symmetric vs Asymmetric, Hashing, PKI)'
+            '1.1 Compare and contrast key security control types (Technical, Administrative, Physical)',
+            '1.2 Summarize fundamental security concepts (CIA Triad, AAA, Non-repudiation)',
+            '1.3 Explain Zero Trust Architecture principles and Gap Analysis',
+            '1.4 Explain cryptographic concepts (Symmetric vs Asymmetric, Hashing, PKI)'
           ],
           ar: [
-            'مقارنة مفاهيم الأمن الأساسية (ثالوث CIA: السرية، النزاهة، التوفر)',
-            'المصادقة والتفويض والمحاسبة (AAA)',
-            'مبادئ بنية عدم الثقة (Zero Trust) وتحليل الفجوات',
-            'مفاهيم التشفير (التماثلي، غير التماثلي، التجزئة، PKI)'
+            '١.١ مقارنة أنواع ضوابط الأمن (التقنية، الإدارية، المادية)',
+            '١.٢ ملخص مفاهيم الأمن الأساسية (ثالوث CIA، المصادقة AAA، عدم الإنكار)',
+            '١.٣ شرح مبادئ بنية عدم الثقة (Zero Trust)',
+            '١.٤ شرح مفاهيم التشفير (التماثلي، غير التماثلي، التجزئة، PKI)'
           ]
         },
         resources: {
           videos: [
             {
-              title: { en: 'Simplilearn: What is Cybersecurity & CIA Triad in 7 Minutes', ar: 'سمبلي ليرن: ما هو الأمن السيبراني وثالوث CIA في ٧ دقائق' },
-              url: 'https://www.youtube.com/watch?v=inWWhr5tnEA',
+              title: { en: 'Professor Messer: 1.1 Security Controls - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ١.١ ضوابط الأمان' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/security-controls-sy0-701/',
               embedId: 'inWWhr5tnEA',
-              duration: '7:15'
+              duration: '12:45'
+            },
+            {
+              title: { en: 'Professor Messer: 1.2 CIA Triad & AAA Controls', ar: 'بروفيسور ميسر: ١.٢ ثالوث CIA والمصادقة AAA' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/cia-triad-and-aaa-sy0-701/',
+              embedId: 'inWWhr5tnEA',
+              duration: '18:20'
+            },
+            {
+              title: { en: 'Professor Messer: 1.3 Zero Trust Architecture', ar: 'بروفيسور ميسر: ١.٣ بنية عدم الثقة' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/zero-trust-sy0-701/',
+              embedId: 'inWWhr5tnEA',
+              duration: '14:10'
             }
           ],
           pdfs: [
             {
               title: { en: 'CompTIA Security+ SY0-701 Official Exam Objectives (PDF)', ar: 'أهداف امتحان سيكيوريتي+ الرسمية (PDF)' },
               url: 'https://www.comptia.org/training/resources/exam-objectives'
+            },
+            {
+              title: { en: 'Professor Messer Free SY0-701 Course Index & Notes', ar: 'مهرجان بروفيسور ميسر وملاحظات دورة SY0-701' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/'
             }
           ],
           practice: [
@@ -65,25 +81,37 @@ export const certifications = [
         estimatedHours: 10,
         objectives: {
           en: [
-            'Analyze common threat actors, motivations, and attack vectors (Phishing, Social Engineering)',
-            'Identify types of malware (Ransomware, Trojans, Rootkits, Keyloggers)',
-            'Understand vulnerability indicators (Zero-day, Misconfigurations, Unpatched systems)',
-            'Apply mitigation techniques (Patching, Hardening, Input Validation)'
+            '2.1 Compare and contrast common threat actors and motivations (Nation-state, Hacktivists, Insiders)',
+            '2.2 Explain common threat vectors and social engineering attacks (Phishing, Vishing, Spear Phishing)',
+            '2.3 Analyze indicators of malicious software (Ransomware, Trojans, Keyloggers, Rootkits)',
+            '2.4 Analyze vulnerability indicators and mitigation techniques (Patching, Hardening)'
           ],
           ar: [
-            'تحليل الجهات المهددة، الدوافع، ونواقل الهجوم (التصيد، الهندسة الاجتماعية)',
-            'التعرف على أنواع البرمجيات الخبيثة (فدية، طروادة، روكيت، مسجلات مفاتيح)',
-            'فهم مؤشرات الثغرات (اليوم الصفر، التكوينات الخاطئة، الأنظمة غير المحدثة)',
-            'تطبيق تقنيات التخفيف (التحديثات، التقوية، التحقق من المدخلات)'
+            '٢.١ مقارنة الجهات المهددة والدوافع (الدول، الناشطون، الداخليون)',
+            '٢.٢ شرح نواقل التهديد وهجمات الهندسة الاجتماعية (التصيد الاحتيالي، التصيد الهاتفي)',
+            '٢.٣ تحليل مؤشرات البرمجيات الخبيثة (الفدية، طروادة، روكيت)',
+            '٢.٤ تحليل مؤشرات الثغرات وتقنيات التخفيف (التحديثات، التقوية)'
           ]
         },
         resources: {
           videos: [
             {
-              title: { en: 'TECHtalk: What is Phishing & Social Engineering Attacks?', ar: 'تك توك: ما هو هجوم التصيد والهندسة الاجتماعية؟' },
-              url: 'https://www.youtube.com/watch?v=Y7zNlEMDmI4',
+              title: { en: 'Professor Messer: 2.1 Threat Actors & Motivations - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٢.١ الجهات المهددة والدوافع' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/threat-actors-sy0-701/',
               embedId: 'Y7zNlEMDmI4',
-              duration: '5:30'
+              duration: '15:40'
+            },
+            {
+              title: { en: 'Professor Messer: 2.2 Social Engineering & Phishing Attacks', ar: 'بروفيسور ميسر: ٢.٢ الهندسة الاجتماعية والتصيد' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/social-engineering-sy0-701/',
+              embedId: 'Y7zNlEMDmI4',
+              duration: '22:15'
+            },
+            {
+              title: { en: 'Professor Messer: 2.3 Types of Malware & Malicious Software', ar: 'بروفيسور ميسر: ٢.٣ أنواع البرمجيات الخبيثة' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/types-of-malware-sy0-701/',
+              embedId: 'Y7zNlEMDmI4',
+              duration: '19:30'
             }
           ],
           pdfs: [
@@ -106,25 +134,25 @@ export const certifications = [
         estimatedHours: 8,
         objectives: {
           en: [
-            'Design secure network architectures (DMZ, Segmentation, Firewalls, VPNs)',
-            'Cloud security considerations (IaaS, PaaS, SaaS, CASB)',
-            'Resilience and business continuity strategies (HA, Redundancy, Backups)',
-            'Secure application deployment and hardware security (TPM, HSM)'
+            '3.1 Compare and contrast security architecture models (DMZ, Segmentation, Firewalls, VPNs)',
+            '3.2 Explain cloud security concepts (IaaS, PaaS, SaaS, CASB, Shared Responsibility Model)',
+            '3.3 Summarize resilience and business continuity strategies (HA, Redundancy, Backups)',
+            '3.4 Hardware security concepts (TPM, HSM, Secure Boot)'
           ],
           ar: [
-            'تصميم بنية شبكات آمنة (DMZ، التجزئة، الجدران النارية، VPN)',
-            'اعتبارات أمن السحابة (IaaS, PaaS, SaaS, CASB)',
-            'استراتيجيات المرونة واستمرارية الأعمال (التوفر العالي، النسخ الاحتياطي)',
-            'نشر التطبيقات الآمن وأمن الأجهزة (TPM, HSM)'
+            '٣.١ مقارنة نماذج هندسة الأمن (DMZ، التجزئة، الجدران النارية، VPN)',
+            '٣.٢ شرح مفاهيم أمن السحابة (IaaS, PaaS, SaaS, CASB, المسؤولية المشتركة)',
+            '٣.٣ ملخص استراتيجيات المرونة واستمرارية الأعمال (التوفر العالي، النسخ الاحتياطي)',
+            '٣.٤ مفاهيم أمن الأجهزة (TPM, HSM, الإقلاع الآمن)'
           ]
         },
         resources: {
           videos: [
             {
-              title: { en: 'AWS Official: What is Cloud Computing & Architecture Essentials', ar: 'رسمي من AWS: مفاهيم وبنية الحوسبة السحابية' },
-              url: 'https://www.youtube.com/watch?v=mxT233EdY5c',
+              title: { en: 'Professor Messer: 3.2 Cloud Security Concepts - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٣.٢ مفاهيم أمن السحابة' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/cloud-security-concepts-sy0-701/',
               embedId: 'mxT233EdY5c',
-              duration: '11:15'
+              duration: '17:45'
             }
           ],
           pdfs: [
@@ -147,25 +175,37 @@ export const certifications = [
         estimatedHours: 10,
         objectives: {
           en: [
-            'Security monitoring tools and SIEM log analysis',
-            'Incident response process (Preparation, Detection, Analysis, Containment, Eradication, Recovery)',
-            'Digital forensics concepts (Chain of Custody, Memory vs Disk Analysis)',
-            'Identity and access controls deployment'
+            '4.1 Apply security baseline data and SIEM log monitoring analysis',
+            '4.2 Explain incident response process (Preparation, Detection, Containment, Eradication, Recovery)',
+            '4.3 Summarize digital forensics concepts (Chain of Custody, Memory vs Disk Analysis)',
+            '4.4 Identity and Access Management Deployment (IAM, MFA, Single Sign-On)'
           ],
           ar: [
-            'أدوات المراقبة الأمنية وتحليل سجلات SIEM',
-            'عملية الاستجابة للحوادث (التحضير، الكشف، التحليل، الاحتواء، الإزالة، الاسترداد)',
-            'مفاهيم الطب الشرعي الرقمي (سلسلة الحضانة، تحليل الذاكرة مقابل القرص)',
-            'نشر أدوات إدارة الهوية والوصول'
+            '٤.١ تطبيق بيانات الأساس الأمنية وتحليل سجلات SIEM',
+            '٤.٢ شرح عملية الاستجابة للحوادث (التحضير، الكشف، الاحتواء، الإزالة، الاسترداد)',
+            '٤.٣ ملخص مفاهيم الطب الشرعي الرقمي (سلسلة الحضانة، تحليل الذاكرة)',
+            '٤.٤ نشر إدارة الهوية والوصول (IAM, MFA, تسجيل الدخول الموحد)'
           ]
         },
         resources: {
           videos: [
             {
-              title: { en: 'Simplilearn: Cybersecurity Incident Response & Operations', ar: 'سمبلي ليرن: الاستجابة للحوادث والعمليات الأمنية' },
-              url: 'https://www.youtube.com/watch?v=inWWhr5tnEA',
+              title: { en: 'Professor Messer: 4.1 Security Monitoring & SIEM Analysis', ar: 'بروفيسور ميسر: ٤.١ المراقبة الأمنية وتحليل SIEM' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/security-monitoring-sy0-701/',
               embedId: 'inWWhr5tnEA',
-              duration: '7:15'
+              duration: '21:10'
+            },
+            {
+              title: { en: 'Professor Messer: 4.2 Incident Response Process Steps', ar: 'بروفيسور ميسر: ٤.٢ خطوات عملية الاستجابة للحوادث' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/incident-response-sy0-701/',
+              embedId: 'inWWhr5tnEA',
+              duration: '18:40'
+            },
+            {
+              title: { en: 'Professor Messer: 4.3 Digital Forensics Concepts', ar: 'بروفيسور ميسر: ٤.٣ مفاهيم الطب الشرعي الرقمي' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/digital-forensics-sy0-701/',
+              embedId: 'inWWhr5tnEA',
+              duration: '15:20'
             }
           ],
           pdfs: [
@@ -188,25 +228,25 @@ export const certifications = [
         estimatedHours: 7,
         objectives: {
           en: [
-            'Security governance policies (SLA, MSA, NDA, AUP)',
-            'Risk management processes (Risk Assessment, Risk Register, Risk Transfer)',
-            'Compliance, auditing, and privacy standards (GDPR, HIPAA, PCI-DSS)',
-            'Third-party vendor risk management'
+            '5.1 Summarize elements of effective security governance (SLA, MSA, NDA, AUP)',
+            '5.2 Explain risk management processes (Risk Assessment, Risk Register, Risk Transfer)',
+            '5.3 Summarize privacy and regulatory compliance concepts (GDPR, HIPAA, PCI-DSS)',
+            '5.4 Third-party vendor risk management'
           ],
           ar: [
-            'سياسات حوكمة الأمن (SLA, MSA, NDA, AUP)',
-            'عمليات إدارة المخاطر (تقييم المخاطر، سجل المخاطر، نقل المخاطر)',
-            'معايير الامتثال والتدقيق والخصوصية (GDPR, HIPAA, PCI-DSS)',
-            'إدارة مخاطر الموردين والأطراف الخارجية'
+            '٥.١ ملخص عناصر حوكمة الأمن الفعالة (SLA, MSA, NDA, AUP)',
+            '٥.٢ شرح عمليات إدارة المخاطر (تقييم المخاطر، سجل المخاطر، نقل المخاطر)',
+            '٥.٣ ملخص مفاهيم الخصوصية والامتثال التنظيمي (GDPR, HIPAA, PCI-DSS)',
+            '٥.٤ إدارة مخاطر الموردين والأطراف الخارجية'
           ]
         },
         resources: {
           videos: [
             {
-              title: { en: 'Simplilearn: Security Governance, Risk & Compliance Overview', ar: 'سمبلي ليرن: حوكمة الأمن والمخاطر والامتثال' },
-              url: 'https://www.youtube.com/watch?v=inWWhr5tnEA',
+              title: { en: 'Professor Messer: 5.2 Risk Management Processes - CompTIA Security+ SY0-701', ar: 'بروفيسور ميسر: ٥.٢ عمليات إدارة المخاطر' },
+              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/risk-management-sy0-701/',
               embedId: 'inWWhr5tnEA',
-              duration: '7:15'
+              duration: '22:15'
             }
           ],
           pdfs: [
@@ -226,14 +266,14 @@ export const certifications = [
     ],
     examTips: {
       en: [
-        'Watch each focused chapter video to master foundational concepts quickly',
+        'Follow Professor Messer\'s sub-section videos (1.1, 1.2, 2.1, 4.1) for structured domain learning',
         'Focus heavily on understanding concepts instead of blind memorization',
         'Practice with Performance-Based Questions (PBQs) — skip them during the exam and solve them at the end',
         'Take at least 3 full-length practice exams on ExamCompass before booking your official exam',
         'Know key port numbers (SSH 22, HTTPS 443, DNS 53, RDP 3389) by heart'
       ],
       ar: [
-        'شاهد فيديوهات الفصول المركزة لإتقان المفاهيم الأساسية بسرعة',
+        'اتبع فيديوهات Professor Messer المقسمة حسب الفصول (1.1, 1.2, 2.1) للدراسة المنظمة',
         'ركز بشدة على فهم المفاهيم بدلاً من الحفظ المجرد',
         'تدرب على أسئلة الأداء العملي (PBQs) — تخطّها أثناء الامتحان وحلها في النهاية',
         'أجرِ ٣ اختبارات تجريبية كاملة على ExamCompass قبل حجز موعد الامتحان',

@@ -39,26 +39,16 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: CompTIA Security+ SY0-701 Full Course (8 Hours)', ar: 'فري كود كامب: دورة سيكيوريتي+ الشاملة (٨ ساعات)' },
-              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
-              embedId: '9neVf7VlD2s',
-              duration: '8:12:00'
-            },
-            {
-              title: { en: 'Professor Messer: General Security Concepts & CIA Triad', ar: 'بروفيسور ميسر: مفاهيم الأمن العامة وثالوث CIA' },
-              url: 'https://www.youtube.com/watch?v=KiEptGbnEBc',
-              embedId: 'KiEptGbnEBc',
-              duration: '18:40'
+              title: { en: 'Simplilearn: What is Cybersecurity & CIA Triad in 7 Minutes', ar: 'سمبلي ليرن: ما هو الأمن السيبراني وثالوث CIA في ٧ دقائق' },
+              url: 'https://www.youtube.com/watch?v=inWWhr5tnEA',
+              embedId: 'inWWhr5tnEA',
+              duration: '7:15'
             }
           ],
           pdfs: [
             {
               title: { en: 'CompTIA Security+ SY0-701 Official Exam Objectives (PDF)', ar: 'أهداف امتحان سيكيوريتي+ الرسمية (PDF)' },
               url: 'https://www.comptia.org/training/resources/exam-objectives'
-            },
-            {
-              title: { en: 'Professor Messer Free SY0-701 Study Notes Overview', ar: 'ملخص ملاحظات دراسة بروفيسور ميسر المجانية' },
-              url: 'https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/'
             }
           ],
           practice: [
@@ -90,10 +80,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: Threats, Malware & Social Engineering Deep Dive', ar: 'فري كود كامب: التهديدات والهندسة الاجتماعية والبرمجيات الخبيثة' },
-              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
-              embedId: '9neVf7VlD2s',
-              duration: '2:15:00'
+              title: { en: 'TECHtalk: What is Phishing & Social Engineering Attacks?', ar: 'تك توك: ما هو هجوم التصيد والهندسة الاجتماعية؟' },
+              url: 'https://www.youtube.com/watch?v=Y7zNlEMDmI4',
+              embedId: 'Y7zNlEMDmI4',
+              duration: '5:30'
             }
           ],
           pdfs: [
@@ -131,10 +121,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: Security Architecture & Cloud Security', ar: 'فري كود كامب: هندسة الأمن وأمن السحابة' },
-              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
-              embedId: '9neVf7VlD2s',
-              duration: '1:45:00'
+              title: { en: 'AWS Official: What is Cloud Computing & Architecture Essentials', ar: 'رسمي من AWS: مفاهيم وبنية الحوسبة السحابية' },
+              url: 'https://www.youtube.com/watch?v=mxT233EdY5c',
+              embedId: 'mxT233EdY5c',
+              duration: '11:15'
             }
           ],
           pdfs: [
@@ -172,10 +162,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: Security Operations, SIEM & Incident Response', ar: 'فري كود كامب: عمليات الأمن والاستجابة للحوادث' },
-              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
-              embedId: '9neVf7VlD2s',
-              duration: '1:30:00'
+              title: { en: 'Simplilearn: Cybersecurity Incident Response & Operations', ar: 'سمبلي ليرن: الاستجابة للحوادث والعمليات الأمنية' },
+              url: 'https://www.youtube.com/watch?v=inWWhr5tnEA',
+              embedId: 'inWWhr5tnEA',
+              duration: '7:15'
             }
           ],
           pdfs: [
@@ -213,10 +203,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: Security Program Management & Governance', ar: 'فري كود كامب: إدارة برنامج الأمن والحوكمة' },
-              url: 'https://www.youtube.com/watch?v=9neVf7VlD2s',
-              embedId: '9neVf7VlD2s',
-              duration: '1:10:00'
+              title: { en: 'Simplilearn: Security Governance, Risk & Compliance Overview', ar: 'سمبلي ليرن: حوكمة الأمن والمخاطر والامتثال' },
+              url: 'https://www.youtube.com/watch?v=inWWhr5tnEA',
+              embedId: 'inWWhr5tnEA',
+              duration: '7:15'
             }
           ],
           pdfs: [
@@ -236,14 +226,14 @@ export const certifications = [
     ],
     examTips: {
       en: [
-        'Use the built-in video player on CoursePath to study each chapter directly',
+        'Watch each focused chapter video to master foundational concepts quickly',
         'Focus heavily on understanding concepts instead of blind memorization',
         'Practice with Performance-Based Questions (PBQs) — skip them during the exam and solve them at the end',
         'Take at least 3 full-length practice exams on ExamCompass before booking your official exam',
         'Know key port numbers (SSH 22, HTTPS 443, DNS 53, RDP 3389) by heart'
       ],
       ar: [
-        'استخدم مشغل الفيديوهات المدمج في CoursePath للدراسة مباشرة',
+        'شاهد فيديوهات الفصول المركزة لإتقان المفاهيم الأساسية بسرعة',
         'ركز بشدة على فهم المفاهيم بدلاً من الحفظ المجرد',
         'تدرب على أسئلة الأداء العملي (PBQs) — تخطّها أثناء الامتحان وحلها في النهاية',
         'أجرِ ٣ اختبارات تجريبية كاملة على ExamCompass قبل حجز موعد الامتحان',
@@ -291,20 +281,16 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp / Andrew Brown: AWS Cloud Practitioner CLF-C02 Full Course', ar: 'دورة فري كود كامب / أندرو براون الشاملة لممارس سحابة AWS' },
-              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
-              embedId: 'SOTamWNgDKc',
-              duration: '14:22:00'
+              title: { en: 'AWS Official: What is Cloud Computing? (11 Minutes)', ar: 'رسمي من AWS: ما هي الحوسبة السحابية؟ (١١ دقيقة)' },
+              url: 'https://www.youtube.com/watch?v=mxT233EdY5c',
+              embedId: 'mxT233EdY5c',
+              duration: '11:15'
             }
           ],
           pdfs: [
             {
               title: { en: 'AWS Cloud Practitioner Official CLF-C02 Exam Guide (PDF)', ar: 'دليل امتحان ممارس سحابة AWS الرسمي (PDF)' },
               url: 'https://aws.amazon.com/certification/certified-cloud-practitioner/'
-            },
-            {
-              title: { en: 'AWS Overview Whitepaper', ar: 'الورقة البيضاء - نظرة عامة على خدمات AWS' },
-              url: 'https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html'
             }
           ],
           practice: [
@@ -336,10 +322,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: AWS IAM & Security Deep Dive', ar: 'فري كود كامب: إدارة الهوية والوصول وأمن AWS' },
-              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
-              embedId: 'SOTamWNgDKc',
-              duration: '2:40:00'
+              title: { en: 'FreeCodeCamp: AWS Cloud Security & IAM Architecture', ar: 'فري كود كامب: بنية أمان AWS وإدارة الهوية' },
+              url: 'https://www.youtube.com/watch?v=Ia-UEYYR44s',
+              embedId: 'Ia-UEYYR44s',
+              duration: '25:00'
             }
           ],
           pdfs: [
@@ -367,10 +353,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: AWS Compute, Storage & Database Services', ar: 'فري كود كامب: خدمات الحوسبة والتخزين وقواعد البيانات في AWS' },
-              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
-              embedId: 'SOTamWNgDKc',
-              duration: '4:15:00'
+              title: { en: 'AWS Official: Cloud Computing & Core Infrastructure Overview', ar: 'رسمي من AWS: البنية التحتية الأساسية والخدمات السحابية' },
+              url: 'https://www.youtube.com/watch?v=mxT233EdY5c',
+              embedId: 'mxT233EdY5c',
+              duration: '11:15'
             }
           ],
           pdfs: [
@@ -408,10 +394,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: AWS Billing, Budgets & Cost Management', ar: 'فري كود كامب: الفواتير والميزانيات وإدارة التكاليف في AWS' },
-              url: 'https://www.youtube.com/watch?v=SOTamWNgDKc',
-              embedId: 'SOTamWNgDKc',
-              duration: '1:20:00'
+              title: { en: 'AWS Official: AWS Cloud Overview & Pricing Fundamentals', ar: 'رسمي من AWS: أساسيات التسعير ونظرة عامة على السحابة' },
+              url: 'https://www.youtube.com/watch?v=mxT233EdY5c',
+              embedId: 'mxT233EdY5c',
+              duration: '11:15'
             }
           ],
           pdfs: [
@@ -484,10 +470,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Alex The Analyst: How to Become a Data Analyst (Full Course)', ar: 'ألكس المحلل: كيف تصبح محلل بيانات (الدورة الكلاسيكية)' },
-              url: 'https://www.youtube.com/watch?v=rwbho0CgEAE',
-              embedId: 'rwbho0CgEAE',
-              duration: '2:10:00'
+              title: { en: 'CareerFoundry: What is Data Analytics? (Complete 15 Min Intro)', ar: 'كاريير فاندري: ما هو تحليل البيانات؟ (مقدمة كاملة 15 دقيقة)' },
+              url: 'https://www.youtube.com/watch?v=yZvFH7B6gKI',
+              embedId: 'yZvFH7B6gKI',
+              duration: '15:10'
             }
           ],
           pdfs: [
@@ -525,9 +511,9 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Alex The Analyst: Excel & Google Sheets Full Course for Beginners', ar: 'ألكس المحلل: دورة إكسل وجداول جوجل كاملة للمبتدئين' },
-              url: 'https://www.youtube.com/watch?v=rwbho0CgEAE',
-              embedId: 'rwbho0CgEAE',
+              title: { en: 'FreeCodeCamp: Microsoft Excel & Spreadsheet Essentials', ar: 'فري كود كامب: أساسيات إكسل وجداول البيانات' },
+              url: 'https://www.youtube.com/watch?v=Vl0H-qTclOg',
+              embedId: 'Vl0H-qTclOg',
               duration: '2:10:00'
             }
           ],
@@ -566,10 +552,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: SQL Tutorial - Full Database Course for Beginners', ar: 'فري كود كامب: دورة قواعد البيانات و SQL الكاملة للمبتدئين' },
-              url: 'https://www.youtube.com/watch?v=HXV3zeQKqGY',
-              embedId: 'HXV3zeQKqGY',
-              duration: '4:20:00'
+              title: { en: 'Programming with Mosh: SQL Databases & Queries Essentials', ar: 'بروجرامنج وذ موش: أساسيات قواعد بيانات واستعلامات SQL' },
+              url: 'https://www.youtube.com/watch?v=7S_tz1z_5bA',
+              embedId: '7S_tz1z_5bA',
+              duration: '1:00:00'
             }
           ],
           pdfs: [
@@ -607,10 +593,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: R Programming Tutorial for Data Science', ar: 'فري كود كامب: دورة لغة R لعلوم البيانات' },
-              url: 'https://www.youtube.com/watch?v=_V8eKsto3Ug',
-              embedId: '_V8eKsto3Ug',
-              duration: '2:10:00'
+              title: { en: 'FreeCodeCamp: Tableau for Data Visualization Crash Course', ar: 'فري كود كامب: دورة Tableau لتصور البيانات' },
+              url: 'https://www.youtube.com/watch?v=TPMlZxRRaBQ',
+              embedId: 'TPMlZxRRaBQ',
+              duration: '1:45:00'
             }
           ],
           pdfs: [
@@ -683,16 +669,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Ricardo Vargas: PMBOK 7th Edition Process Group & Value Delivery System', ar: ' ريكاردو فارجاس: نظام تسليم القيمة ودليل PMBOK الإصدار السابع' },
-              url: 'https://www.youtube.com/watch?v=2i99s9x7m3Q',
-              embedId: '2i99s9x7m3Q',
-              duration: '55:10'
-            },
-            {
-              title: { en: 'Alvin the PM: CAPM Exam Complete Overview & Strategy', ar: 'ألفين PM: استراتيجية ومراجعة امتحان CAPM' },
-              url: 'https://www.youtube.com/watch?v=i69U0lvi89c',
-              embedId: 'i69U0lvi89c',
-              duration: '42:15'
+              title: { en: 'Uzility: Introduction to Scrum & Agile Project Management in 7 Minutes', ar: 'يوزيلتي: مقدمة في السكرم وإدارة المشاريع بطريقة الأجايل في ٧ دقائق' },
+              url: 'https://www.youtube.com/watch?v=9TycLR0TqFA',
+              embedId: '9TycLR0TqFA',
+              duration: '7:10'
             }
           ],
           pdfs: [
@@ -730,10 +710,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Ricardo Vargas: PMBOK 7th Edition Deep Dive', ar: 'ريكاردو فارجاس: تعمق في دليل PMBOK 7' },
-              url: 'https://www.youtube.com/watch?v=2i99s9x7m3Q',
-              embedId: '2i99s9x7m3Q',
-              duration: '55:10'
+              title: { en: 'Uzility: Agile vs Waterfall Project Management Frameworks', ar: 'يوزيلتي: مقارنة أطر عمل الأجايل مقابل الشلال' },
+              url: 'https://www.youtube.com/watch?v=9TycLR0TqFA',
+              embedId: '9TycLR0TqFA',
+              duration: '7:10'
             }
           ],
           pdfs: [
@@ -771,10 +751,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: Agile Project Management & Scrum Course', ar: 'فري كود كامب: دورة إدارة المشاريع بطريقة الأجايل والسكرم' },
-              url: 'https://www.youtube.com/watch?v=2i99s9x7m3Q',
-              embedId: '2i99s9x7m3Q',
-              duration: 'Full Course'
+              title: { en: 'Uzility: Introduction to Scrum Framework & Sprints', ar: 'يوزيلتي: مقدمة في إطار عمل السكرم والدورات' },
+              url: 'https://www.youtube.com/watch?v=9TycLR0TqFA',
+              embedId: '9TycLR0TqFA',
+              duration: '7:10'
             }
           ],
           pdfs: [
@@ -812,10 +792,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Business Analysis Fundamentals for CAPM & PMP', ar: 'أساسيات تحليل الأعمال لامتحانات CAPM و PMP' },
-              url: 'https://www.youtube.com/watch?v=i69U0lvi89c',
-              embedId: 'i69U0lvi89c',
-              duration: '35:20'
+              title: { en: 'Uzility: Business Analysis & User Stories in Agile', ar: 'يوزيلتي: تحليل الأعمال وقصص المستخدمين في الأجايل' },
+              url: 'https://www.youtube.com/watch?v=9TycLR0TqFA',
+              embedId: '9TycLR0TqFA',
+              duration: '7:10'
             }
           ],
           pdfs: [
@@ -888,16 +868,16 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: CCNA 200-301 Full Course (12 Hours)', ar: 'فري كود كامب: دورة CCNA الشاملة (١٢ ساعة)' },
+              title: { en: 'Jeremy\'s IT Lab: CCNA Day 1 - Network Devices & OSI Model', ar: 'مختبر جيريمي: اليوم الأول - أجهزة الشبكات ونموذج OSI' },
               url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
               embedId: 'H8W9oMNSuwo',
-              duration: '11:58:00'
+              duration: '35:20'
             },
             {
-              title: { en: 'NetworkChuck: You Need to Learn Subnetting RIGHT NOW!', ar: 'نتورك تشاك: يجب أن تتعلم التقسيم الفرعي الآن!' },
-              url: 'https://www.youtube.com/watch?v=bwX3gE82-tM',
-              embedId: 'bwX3gE82-tM',
-              duration: '22:15'
+              title: { en: 'Sunny Classroom: Subnetting is Simple (12 Minutes)', ar: 'صني كلاس روم: التقسيم الفرعي بسيط جداً (١٢ دقيقة)' },
+              url: 'https://www.youtube.com/watch?v=ecCuyq-Wprc',
+              embedId: 'ecCuyq-Wprc',
+              duration: '12:40'
             }
           ],
           pdfs: [
@@ -939,10 +919,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'Jeremy\'s IT Lab / FreeCodeCamp: VLANs, Trunking & STP', ar: 'مختبر جيريمي / فري كود كامب: شرح VLANs وبروتوكول STP' },
-              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
-              embedId: 'H8W9oMNSuwo',
-              duration: '2:15:00'
+              title: { en: 'CertBros: VLANs & Trunking Explained in 14 Minutes', ar: 'سيرت بروس: شرح VLANs والتجذير في ١٤ دقيقة' },
+              url: 'https://www.youtube.com/watch?v=A9lMH0ye1HU',
+              embedId: 'A9lMH0ye1HU',
+              duration: '14:15'
             }
           ],
           pdfs: [
@@ -980,10 +960,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: CCNA IP Connectivity & OSPF Routing', ar: 'فري كود كامب: اتصال IP وتوجيه OSPF' },
-              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
-              embedId: 'H8W9oMNSuwo',
-              duration: '2:40:00'
+              title: { en: 'CertBros: OSPF Protocol Explained Step by Step (16 Minutes)', ar: 'سيرت بروس: شرح بروتوكول OSPF خطوة بخطوة (١٦ دقيقة)' },
+              url: 'https://www.youtube.com/watch?v=kfvJ8QVJscc',
+              embedId: 'kfvJ8QVJscc',
+              duration: '16:20'
             }
           ],
           pdfs: [
@@ -1021,10 +1001,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: CCNA IP Services, NAT & ACL Security', ar: 'فري كود كامب: خدمات IP و NAT وقوائم التحكم ACLs' },
-              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
-              embedId: 'H8W9oMNSuwo',
-              duration: '2:10:00'
+              title: { en: 'PowerCert Animated Videos: NAT & PAT Explained in 10 Minutes', ar: 'باور كيرت: شرح NAT و PAT في ١٠ دقائق' },
+              url: 'https://www.youtube.com/watch?v=FTUV0t6JaDA',
+              embedId: 'FTUV0t6JaDA',
+              duration: '10:15'
             }
           ],
           pdfs: [
@@ -1036,7 +1016,7 @@ export const certifications = [
           practice: [
             {
               title: { en: 'NetworkChuck: Practice Building ACLs in Packet Tracer', ar: 'تطبيق بناء قوائم التحكم بالوصول في Packet Tracer' },
-              url: 'https://www.youtube.com/watch?v=bwX3gE82-tM'
+              url: 'https://www.youtube.com/watch?v=FTUV0t6JaDA'
             }
           ]
         }
@@ -1062,10 +1042,10 @@ export const certifications = [
         resources: {
           videos: [
             {
-              title: { en: 'FreeCodeCamp: Network Automation, REST APIs & Python for CCNA', ar: 'فري كود كامب: أتمتة الشبكات وواجهات REST APIs' },
-              url: 'https://www.youtube.com/watch?v=H8W9oMNSuwo',
-              embedId: 'H8W9oMNSuwo',
-              duration: '1:30:00'
+              title: { en: 'PowerCert Animated Videos: Network Automation & REST APIs', ar: 'باور كيرت: أتمتة الشبكات وواجهات REST APIs' },
+              url: 'https://www.youtube.com/watch?v=FTUV0t6JaDA',
+              embedId: 'FTUV0t6JaDA',
+              duration: '10:15'
             }
           ],
           pdfs: [
@@ -1085,13 +1065,13 @@ export const certifications = [
     ],
     examTips: {
       en: [
-        'Jeremy\'s IT Lab & FreeCodeCamp on YouTube are the top recommended free video courses for CCNA',
+        'Jeremy\'s IT Lab & CertBros on YouTube are top recommended free video resources for CCNA',
         'Subnetting speed is mandatory — practice daily until you can calculate subnets in under 30 seconds',
         'Download Cisco Packet Tracer for free from NetAcad to build real routers, switches, and firewalls',
         'Pay close attention to OSPF configuration commands (`network`, `area`, `router-id`)'
       ],
       ar: [
-        'دورة Jeremy\'s IT Lab و FreeCodeCamp على يوتيوب هما أفضل دورات مجانية لـ CCNA — أكمل جميع تطبيقات Packet Tracer',
+        'دورة Jeremy\'s IT Lab و CertBros على يوتيوب هما أفضل دورات مجانية لـ CCNA — أكمل جميع تطبيقات Packet Tracer',
         'سرعة التقسيم الفرعي إجبارية — تدرب يومياً حتى تحسب الشبكات الفرعية في أقل من ٣٠ ثانية',
         'حمل برنامج Cisco Packet Tracer مجاناً من NetAcad لبناء موجهات ومبدلات وجدران نارية واقعية',
         'انتبه جيداً لأوامر إعداد OSPF مثل (`network`, `area`, `router-id`)'
